@@ -14,7 +14,7 @@ A modular PowerShell-based Windows 11 image builder optimized for gaming perform
 
 ## Quick Start
 
-### Option 1: One-Line Web Install
+### Option 1: One-Line Web Install (WIP, not working properly)
 
 ```powershell
 irm https://neotiny11.vercel.app/install | iex

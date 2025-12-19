@@ -46,5 +46,5 @@
   ],
   "redirects": [
     { "source": "/install", "destination": "/api/install.ps1" },
-    
+    ]
 }

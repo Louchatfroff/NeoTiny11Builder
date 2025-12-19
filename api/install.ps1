@@ -12,8 +12,8 @@
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "SilentlyContinue"
 
-# Configuration - UPDATE THIS WITH YOUR GITHUB USERNAME
-$RepoOwner = "YOUR_GITHUB_USERNAME"
+# Configuration
+$RepoOwner = "Louchatfroff"
 $RepoName = "NeoTiny11Builder"
 $Branch = "main"
 $InstallPath = "$env:TEMP\NeoTiny11Builder"

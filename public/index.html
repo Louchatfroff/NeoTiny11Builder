@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoTiny11 Gaming Builder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #00d9ff, #7b2cbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            color: #a0a0a0;
+            font-size: 1.2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .card h2 {
+            color: #00d9ff;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .install-box {
+            background: #0d1117;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            border: 1px solid #30363d;
+            position: relative;
+        }
+
+        .install-box code {
+            color: #58a6ff;
+            font-size: 1rem;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #238636;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: #2ea043;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .feature {
+            background: rgba(0, 217, 255, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+        }
+
+        .feature h3 {
+            color: #00d9ff;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .feature p {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .steps {
+            counter-reset: step;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+        }
+
+        .step::before {
+            counter-increment: step;
+            content: counter(step);
+            background: linear-gradient(135deg, #00d9ff, #7b2cbf);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            margin-bottom: 5px;
+        }
+
+        .step-content p {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+        }
+
+        .warning {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .warning h4 {
+            color: #ffc107;
+            margin-bottom: 8px;
+        }
+
+        .warning p {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #666;
+        }
+
+        .footer a {
+            color: #00d9ff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 2rem;
+            }
+            .install-box code {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">NeoTiny11</div>
+            <p class="tagline">Windows 11 Gaming-Optimized Image Builder</p>
+        </header>
+
+        <div class="card">
+            <h2>Quick Install</h2>
+            <p style="color: #a0a0a0; margin-bottom: 15px;">Run this command in PowerShell (as Administrator):</p>
+            <div class="install-box">
+                <code>irm https://neotiny11.vercel.app/install | iex</code>
+                <button class="copy-btn" onclick="copyCommand()">Copy</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>No ISO Mounting</h3>
+                    <p>Just extract your Windows 11 ISO with 7-Zip and point to the folder. No mounting required!</p>
+                </div>
+                <div class="feature">
+                    <h3>Gaming Optimized</h3>
+                    <p>CPU mitigations disabled, GPU scheduling enabled, network latency optimized, and more.</p>
+                </div>
+                <div class="feature">
+                    <h3>Bloatware Free</h3>
+                    <p>Removes 50+ unnecessary apps while keeping gaming essentials like DirectX and VC++.</p>
+                </div>
+                <div class="feature">
+                    <h3>Privacy Focused</h3>
+                    <p>Disables telemetry, advertising, activity history, and other tracking features.</p>
+                </div>
+                <div class="feature">
+                    <h3>Hardware Bypass</h3>
+                    <p>Bypasses TPM, Secure Boot, RAM, and CPU requirements for older hardware.</p>
+                </div>
+                <div class="feature">
+                    <h3>Modular Scripts</h3>
+                    <p>Clean, readable PowerShell scripts that are easy to customize for your needs.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>How to Use</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-content">
+                        <h4>Download Windows 11 ISO</h4>
+                        <p>Get the official ISO from Microsoft's website.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-content">
+                        <h4>Extract the ISO</h4>
+                        <p>Use 7-Zip or WinRAR to extract the ISO contents to a folder.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-content">
+                        <h4>Run the Builder</h4>
+                        <p>Open PowerShell as Administrator and run the install command above.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-content">
+                        <h4>Select Source Folder</h4>
+                        <p>Choose the extracted ISO folder when prompted.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-content">
+                        <h4>Get Your Optimized ISO</h4>
+                        <p>Find your gaming-optimized Windows 11 ISO in the output folder!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning">
+                <h4>Important Notes</h4>
+                <p>Always test on a virtual machine first. Some optimizations (like CPU mitigations) trade security for performance. Keep your original ISO as backup.</p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Based on <a href="https://github.com/ntdevlabs/tiny11builder">tiny11builder</a> and <a href="https://github.com/Atlas-OS/Atlas">Atlas OS</a></p>
+            <p style="margin-top: 10px;"><a href="https://github.com/YOUR_USERNAME/NeoTiny11Builder">View on GitHub</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCommand() {
+            const command = 'irm https://neotiny11.vercel.app/install | iex';
+            navigator.clipboard.writeText(command).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = 'Copy', 2000);
+            });
+        }
+    </script>
+</body>
+</html>

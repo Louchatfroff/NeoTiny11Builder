@@ -1,0 +1,47 @@
+{
+  "version": 2,
+  "name": "neotiny11-builder",
+  "public": true,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "buildCommand": "",
+  "outputDirectory": "public",
+  "headers": [
+    {
+      "source": "/api/install.ps1",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/scripts/(.*).ps1",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/install",
+      "destination": "/api/install.ps1"
+    }
+  ]
+}

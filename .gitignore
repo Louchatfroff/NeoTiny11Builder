@@ -1,0 +1,34 @@
+# Build outputs
+output/
+scratch/
+temp/
+*.iso
+*.wim
+*.esd
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Node modules (for Vercel)
+node_modules/
+
+# Environment
+.env
+.env.local
+
+# OS files
+.DS_Store
+*.swp
+*.swo

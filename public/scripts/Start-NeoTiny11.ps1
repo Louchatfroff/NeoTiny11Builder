@@ -92,8 +92,13 @@ function Get-IsoSourcePath {
     if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
         $selectedPath = $dialog.SelectedPath
 
-        # Validate the selected folder
-        if (Test-Path "$selectedPath\sources\install.wim" -or Test-Path "$selectedPath\sources\install.esd") {
+        # Validate the selected folder (use explicit boolean variables to avoid parser issues)
+        $wimPath = Join-Path $selectedPath 'sources\install.wim'
+        $esdPath = Join-Path $selectedPath 'sources\install.esd'
+        $hasWim = Test-Path -Path $wimPath
+        $hasEsd = Test-Path -Path $esdPath
+
+        if ($hasWim -or $hasEsd) {
             Write-Step "Valid Windows source detected: $selectedPath" "SUCCESS"
             return $selectedPath
         }
@@ -390,7 +395,6 @@ Write-Host "  Output:   $Script:OutputPath\$($Config.General.IsoFileName)" -Fore
 Write-Host ""
 Write-Host "  This will create a gaming-optimized Windows 11 image." -ForegroundColor Gray
 Write-Host ""
-
 $confirm = Read-Host "  Proceed with build? (Y/N)"
 
 if ($confirm -match "^[Yy]") {

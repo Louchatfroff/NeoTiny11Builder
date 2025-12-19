@@ -307,7 +307,7 @@ function Start-BuildProcess {
 
     # Phase 7: Build ISO
     Write-Step "Phase 7/7: Building ISO..." "STEP"
-    & "$Script:ScriptsPath\Build-ISO.ps1" -ScratchPath $Script:ScratchPath -OutputPath $Script:OutputPath -Config $Config -ToolsPath $Script:ToolsPath
+    & "$Script:ScriptsPath\Build-ISO.ps1" -ScratchPath $Script:ScratchPath -OutputPath $Script:OutputPath -Config $Config -ToolsPath $Script:ToolsPath -Language $Language.Code
     Write-Step "ISO built successfully" "SUCCESS"
 
     $endTime = Get-Date

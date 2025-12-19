@@ -25,7 +25,11 @@ param(
     [PSCustomObject]$Config,
 
     [Parameter(Mandatory = $true)]
-    [string]$ToolsPath
+    [string]$ToolsPath,
+
+    [Parameter(Mandatory = $false)]
+    [ValidateSet("FR", "EN")]
+    [string]$Language = "EN"
 )
 
 $ErrorActionPreference = "Stop"
@@ -95,57 +99,51 @@ if ($LASTEXITCODE -ne 0) {
 Write-Step "Image compression complete" "SUCCESS"
 
 # ============================================================================
-# CREATE AUTOUNATTEND.XML (Bypass Microsoft Account)
+# COPY LOCALIZED AUTOUNATTEND.XML
 # ============================================================================
-if ($Config.Installation.AutoUnattend) {
-    Write-Step "Creating autounattend.xml for unattended installation..." "INFO"
+Write-Step "Copying localized autounattend.xml ($Language)..." "INFO"
 
+$rootPath = Split-Path $PSScriptRoot -Parent
+$autounattendFolder = "$rootPath\autounnatended"
+
+# Select the appropriate autounattend.xml based on language
+if ($Language -eq "FR") {
+    $sourceAutounattend = "$autounattendFolder\autounnatended_fra.xml"
+    Write-Step "Using French autounattend configuration" "INFO"
+} else {
+    $sourceAutounattend = "$autounattendFolder\autounattend_eng.xml"
+    Write-Step "Using English autounattend configuration" "INFO"
+}
+
+# Copy the localized autounattend.xml to the ISO root
+if (Test-Path $sourceAutounattend) {
+    Copy-Item -Path $sourceAutounattend -Destination "$isoPath\autounattend.xml" -Force
+    Write-Step "autounattend.xml copied successfully" "SUCCESS"
+} else {
+    Write-Step "Localized autounattend.xml not found: $sourceAutounattend" "WARNING"
+    Write-Step "Falling back to default autounattend..." "WARNING"
+
+    # Fallback: Create a minimal autounattend.xml
     $autoUnattendContent = @'
 <?xml version="1.0" encoding="utf-8"?>
 <unattend xmlns="urn:schemas-microsoft-com:unattend">
-    <settings pass="windowsPE">
-        <component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <SetupUILanguage>
-                <UILanguage>en-US</UILanguage>
-            </SetupUILanguage>
-            <InputLocale>en-US</InputLocale>
-            <SystemLocale>en-US</SystemLocale>
-            <UILanguage>en-US</UILanguage>
-            <UserLocale>en-US</UserLocale>
-        </component>
-        <component name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <UserData>
-                <AcceptEula>true</AcceptEula>
-            </UserData>
-        </component>
-    </settings>
     <settings pass="oobeSystem">
-        <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
             <OOBE>
                 <HideEULAPage>true</HideEULAPage>
-                <HideLocalAccountScreen>false</HideLocalAccountScreen>
-                <HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
                 <HideOnlineAccountScreens>true</HideOnlineAccountScreens>
                 <HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
                 <ProtectYourPC>3</ProtectYourPC>
             </OOBE>
-            <FirstLogonCommands>
-                <SynchronousCommand wcm:action="add">
-                    <Order>1</Order>
-                    <CommandLine>reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE" /v BypassNRO /t REG_DWORD /d 1 /f</CommandLine>
-                    <Description>Bypass Network Requirement</Description>
-                </SynchronousCommand>
-            </FirstLogonCommands>
         </component>
     </settings>
 </unattend>
 '@
-
     $autoUnattendContent | Out-File -FilePath "$isoPath\autounattend.xml" -Encoding UTF8 -Force
-    Write-Step "autounattend.xml created" "SUCCESS"
+}
 
-    # Also create bypass script for manual use
-    $bypassScript = @'
+# Also create bypass script for manual use
+$bypassScript = @'
 @echo off
 :: Run this if OOBE asks for Microsoft Account
 :: It enables the "I don't have internet" option
@@ -153,8 +151,7 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE" /v BypassNRO /t RE
 shutdown /r /t 0
 '@
 
-    $bypassScript | Out-File -FilePath "$isoPath\BypassMSAccount.cmd" -Encoding ASCII -Force
-}
+$bypassScript | Out-File -FilePath "$isoPath\BypassMSAccount.cmd" -Encoding ASCII -Force
 
 # ============================================================================
 # FIND OSCDIMG

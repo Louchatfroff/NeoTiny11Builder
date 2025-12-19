@@ -231,14 +231,15 @@ if (Test-Path $outputIso) {
 }
 
 # Build the ISO with BIOS and UEFI boot support
+# Note: bootdata entries must be concatenated without spaces
+$bootData = "-bootdata:2#p0,e,b`"$biosBootFile`"#pEF,e,b`"$uefiBootFile`""
+
 $oscdimgArgs = @(
     "-m"                                           # Ignore maximum size limit
     "-o"                                           # Optimize storage
     "-u2"                                          # UDF file system
     "-udfver102"                                   # UDF version 1.02
-    "-bootdata:2"                                  # Two boot entries
-    "#p0,e,b`"$biosBootFile`""                     # BIOS boot
-    "#pEF,e,b`"$uefiBootFile`""                    # UEFI boot
+    $bootData                                      # Boot entries (must be one string)
     "`"$isoPath`""                                 # Source path
     "`"$outputIso`""                               # Output ISO
 )
@@ -260,7 +261,7 @@ if ($process.ExitCode -eq 0 -and (Test-Path $outputIso)) {
 }
 else {
     Write-Step "ISO creation failed! Exit code: $($process.ExitCode)" "ERROR"
-    exit 1
+    throw "ISO creation failed with exit code $($process.ExitCode)"
 }
 
 # ============================================================================

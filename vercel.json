@@ -24,6 +24,13 @@
     }
   ],
   "rewrites": [
-    { "source": "/install", "destination": "/install.ps1" }
+    {
+      "source": "/install",
+      "destination": "/api/install.ps1"
+    },
+    {
+      "source": "/install.ps1",
+      "destination": "/api/install.ps1"
+    }
   ]
 }

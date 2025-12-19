@@ -8,7 +8,7 @@
   "outputDirectory": "public",
   "headers": [
     {
-      "source": "/install.ps1",
+      "source": "/api/install.ps1",
       "headers": [
         {
           "key": "Content-Type",
@@ -41,7 +41,7 @@
   "rewrites": [
     {
       "source": "/install",
-      "destination": "/install.ps1"
+      "destination": "/api/install.ps1"
     }
   ]
 }

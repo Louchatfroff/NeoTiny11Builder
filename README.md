@@ -23,7 +23,7 @@ irm https://neotiny11.vercel.app/install | iex
 ### Option 2: Clone and Run
 
 ```powershell
-git clone https://github.com/YOUR_USERNAME/NeoTiny11Builder.git
+git clone https://github.com/Louchatfroff/NeoTiny11Builder.git
 cd NeoTiny11Builder
 .\scripts\Start-NeoTiny11.ps1
 ```

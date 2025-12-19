@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeoTiny11 Gaming Builder</title>
+    <meta name="description" content="Windows 11 Gaming-Optimized Image Builder">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,111 +15,354 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --bg-primary: #000000;
+            --bg-secondary: #0a0a0a;
+            --text-primary: #ffffff;
+            --text-secondary: #808080;
+            --accent-red: #ff0000;
+            --border-color: #1a1a1a;
+            --hover-bg: #141414;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            font-family: 'JetBrains Mono', 'Space Mono', monospace;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             min-height: 100vh;
-            color: #fff;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* Custom Cursor */
+        body * {
+            cursor: none;
+        }
+
+        #cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--text-primary);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.1s ease;
+            mix-blend-mode: difference;
+        }
+
+        #cursor-dot {
+            width: 4px;
+            height: 4px;
+            background: var(--text-primary);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 10000;
+            mix-blend-mode: difference;
+        }
+
+        /* Dot pattern background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, var(--border-color) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Loading Screen */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-primary);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10001;
+            transition: opacity 0.5s ease;
+            cursor: none;
+        }
+
+        .loading-text {
+            font-size: 24px;
+            letter-spacing: 6px;
+            animation: loadingPulse 1.5s infinite;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .loading-click {
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: var(--text-secondary);
+            animation: clickBlink 2s infinite;
+        }
+
+        @keyframes loadingPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes clickBlink {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 600px;
             margin: 0 auto;
-            padding: 40px 20px;
+            animation: fadeIn 0.8s ease;
+            display: none;
         }
 
+        .container.visible {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header */
         .header {
             text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .logo {
-            font-size: 3rem;
-            font-weight: bold;
-            background: linear-gradient(90deg, #00d9ff, #7b2cbf);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
-
-        .tagline {
-            color: #a0a0a0;
-            font-size: 1.2rem;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
+            margin-bottom: 40px;
             padding: 30px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .card h2 {
-            color: #00d9ff;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-
-        .install-box {
-            background: #0d1117;
-            border-radius: 8px;
-            padding: 20px;
-            font-family: 'Consolas', 'Monaco', monospace;
-            border: 1px solid #30363d;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
             position: relative;
         }
 
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-red), transparent);
+            animation: scanline 3s infinite;
+        }
+
+        @keyframes scanline {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        /* Glitch effect */
+        .glitch {
+            position: relative;
+        }
+
+        .glitch:hover::before,
+        .glitch:hover::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch:hover::before {
+            animation: glitch-1 0.3s infinite;
+            color: var(--accent-red);
+            z-index: -1;
+        }
+
+        .glitch:hover::after {
+            animation: glitch-2 0.3s infinite;
+            color: var(--text-secondary);
+            z-index: -2;
+        }
+
+        @keyframes glitch-1 {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        @keyframes glitch-2 {
+            0% { transform: translate(0); }
+            20% { transform: translate(2px, -2px); }
+            40% { transform: translate(2px, 2px); }
+            60% { transform: translate(-2px, -2px); }
+            80% { transform: translate(-2px, 2px); }
+            100% { transform: translate(0); }
+        }
+
+        .tagline {
+            font-size: 12px;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .version {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 5px 12px;
+            background: var(--bg-primary);
+            border: 1px solid var(--accent-red);
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: var(--accent-red);
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent-red);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .card h2 {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .card h2::before {
+            content: '> ';
+            color: var(--accent-red);
+        }
+
+        /* Install Box */
+        .install-box {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            position: relative;
+            font-family: 'Space Mono', monospace;
+        }
+
         .install-box code {
-            color: #58a6ff;
-            font-size: 1rem;
+            color: var(--accent-red);
+            font-size: 13px;
             word-break: break-all;
+            display: block;
+            padding-right: 80px;
         }
 
         .copy-btn {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #238636;
-            border: none;
-            color: white;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            background: transparent;
+            border: 1px solid var(--text-secondary);
+            color: var(--text-secondary);
             padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: background 0.2s;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: none;
+            transition: all 0.3s ease;
         }
 
         .copy-btn:hover {
-            background: #2ea043;
+            border-color: var(--accent-red);
+            color: var(--accent-red);
         }
 
+        .install-note {
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        /* Features Grid */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
         }
 
         .feature {
-            background: rgba(0, 217, 255, 0.05);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(0, 217, 255, 0.2);
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            border-color: var(--text-secondary);
+            transform: translateX(3px);
         }
 
         .feature h3 {
-            color: #00d9ff;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: var(--text-primary);
         }
 
         .feature p {
-            color: #a0a0a0;
-            font-size: 0.95rem;
-            line-height: 1.5;
+            font-size: 11px;
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
+        /* Steps */
         .steps {
             counter-reset: step;
         }
@@ -123,182 +370,352 @@
         .step {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 20px;
+            gap: 15px;
             padding: 15px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 8px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
         }
 
-        .step::before {
-            counter-increment: step;
-            content: counter(step);
-            background: linear-gradient(135deg, #00d9ff, #7b2cbf);
-            color: white;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
+        .step:hover {
+            border-color: var(--text-secondary);
+            transform: translateX(3px);
+        }
+
+        .step-number {
+            width: 28px;
+            height: 28px;
+            border: 1px solid var(--accent-red);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            margin-right: 15px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent-red);
             flex-shrink: 0;
         }
 
         .step-content h4 {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             margin-bottom: 5px;
         }
 
         .step-content p {
-            color: #a0a0a0;
-            font-size: 0.95rem;
+            font-size: 11px;
+            color: var(--text-secondary);
         }
 
+        /* Warning */
         .warning {
-            background: rgba(255, 193, 7, 0.1);
-            border: 1px solid rgba(255, 193, 7, 0.3);
-            border-radius: 8px;
+            background: var(--bg-primary);
+            border: 1px solid var(--accent-red);
             padding: 15px;
             margin-top: 20px;
         }
 
         .warning h4 {
-            color: #ffc107;
-            margin-bottom: 8px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-red);
+            margin-bottom: 10px;
+        }
+
+        .warning h4::before {
+            content: '! ';
         }
 
         .warning p {
-            color: #a0a0a0;
-            font-size: 0.9rem;
+            font-size: 11px;
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 20px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-red);
+        }
+
+        .stat-label {
+            font-size: 10px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+        /* Footer */
         .footer {
             text-align: center;
-            margin-top: 50px;
-            color: #666;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 10px;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
         }
 
         .footer a {
-            color: #00d9ff;
+            color: var(--accent-red);
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         .footer a:hover {
-            text-decoration: underline;
+            color: var(--text-primary);
         }
 
+        /* Responsive */
         @media (max-width: 600px) {
             .logo {
-                font-size: 2rem;
+                font-size: 24px;
+                letter-spacing: 2px;
             }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
             .install-box code {
-                font-size: 0.85rem;
+                font-size: 11px;
+                padding-right: 0;
+                padding-bottom: 50px;
+            }
+
+            .copy-btn {
+                top: auto;
+                bottom: 15px;
+                right: 15px;
+                transform: none;
+            }
+
+            .stats {
+                gap: 20px;
+            }
+
+            .stat-value {
+                font-size: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="logo">NeoTiny11</div>
-            <p class="tagline">Windows 11 Gaming-Optimized Image Builder</p>
-        </header>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="loading-text">NEOTINY11_BUILDER</div>
+        <div class="loading-click">CLICK TO ENTER</div>
+    </div>
 
+    <!-- Custom Cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-dot"></div>
+
+    <!-- Main Container -->
+    <div class="container" id="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="logo glitch" data-text="NEOTINY11">NEOTINY11</h1>
+            <p class="tagline">Windows 11 Gaming-Optimized Image Builder</p>
+            <span class="version">v1.0.0 GAMING</span>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">50+</div>
+                <div class="stat-label">Apps Removed</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">30%</div>
+                <div class="stat-label">Faster Boot</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Gaming Ready</div>
+            </div>
+        </div>
+
+        <!-- Quick Install -->
         <div class="card">
             <h2>Quick Install</h2>
-            <p style="color: #a0a0a0; margin-bottom: 15px;">Run this command in PowerShell (as Administrator):</p>
+            <p class="install-note">Run in PowerShell as Administrator:</p>
             <div class="install-box">
                 <code>irm https://neotiny11.vercel.app/install | iex</code>
                 <button class="copy-btn" onclick="copyCommand()">Copy</button>
             </div>
         </div>
 
+        <!-- Features -->
         <div class="card">
             <h2>Features</h2>
             <div class="features">
                 <div class="feature">
-                    <h3>No ISO Mounting</h3>
-                    <p>Just extract your Windows 11 ISO with 7-Zip and point to the folder. No mounting required!</p>
+                    <h3>No Mounting</h3>
+                    <p>Extract ISO with 7-Zip and point to the folder. Simple.</p>
                 </div>
                 <div class="feature">
-                    <h3>Gaming Optimized</h3>
-                    <p>CPU mitigations disabled, GPU scheduling enabled, network latency optimized, and more.</p>
+                    <h3>Gaming Mode</h3>
+                    <p>CPU mitigations off, GPU scheduling on, low latency network.</p>
                 </div>
                 <div class="feature">
-                    <h3>Bloatware Free</h3>
-                    <p>Removes 50+ unnecessary apps while keeping gaming essentials like DirectX and VC++.</p>
+                    <h3>Debloated</h3>
+                    <p>50+ apps removed. Edge, Cortana, Teams, Copilot gone.</p>
                 </div>
                 <div class="feature">
-                    <h3>Privacy Focused</h3>
-                    <p>Disables telemetry, advertising, activity history, and other tracking features.</p>
+                    <h3>Privacy</h3>
+                    <p>Telemetry disabled. No tracking. No ads.</p>
                 </div>
                 <div class="feature">
-                    <h3>Hardware Bypass</h3>
-                    <p>Bypasses TPM, Secure Boot, RAM, and CPU requirements for older hardware.</p>
+                    <h3>Bypass</h3>
+                    <p>TPM, SecureBoot, RAM, CPU checks bypassed.</p>
                 </div>
                 <div class="feature">
-                    <h3>Modular Scripts</h3>
-                    <p>Clean, readable PowerShell scripts that are easy to customize for your needs.</p>
+                    <h3>Modular</h3>
+                    <p>Clean PowerShell scripts. Easy to customize.</p>
                 </div>
             </div>
         </div>
 
+        <!-- How to Use -->
         <div class="card">
             <h2>How to Use</h2>
             <div class="steps">
                 <div class="step">
+                    <div class="step-number">1</div>
                     <div class="step-content">
-                        <h4>Download Windows 11 ISO</h4>
-                        <p>Get the official ISO from Microsoft's website.</p>
+                        <h4>Download ISO</h4>
+                        <p>Get Windows 11 ISO from Microsoft.</p>
                     </div>
                 </div>
                 <div class="step">
+                    <div class="step-number">2</div>
                     <div class="step-content">
-                        <h4>Extract the ISO</h4>
-                        <p>Use 7-Zip or WinRAR to extract the ISO contents to a folder.</p>
+                        <h4>Extract</h4>
+                        <p>Use 7-Zip to extract ISO contents to a folder.</p>
                     </div>
                 </div>
                 <div class="step">
+                    <div class="step-number">3</div>
                     <div class="step-content">
-                        <h4>Run the Builder</h4>
-                        <p>Open PowerShell as Administrator and run the install command above.</p>
+                        <h4>Run Builder</h4>
+                        <p>Execute the install command above in PowerShell.</p>
                     </div>
                 </div>
                 <div class="step">
+                    <div class="step-number">4</div>
                     <div class="step-content">
-                        <h4>Select Source Folder</h4>
+                        <h4>Select Folder</h4>
                         <p>Choose the extracted ISO folder when prompted.</p>
                     </div>
                 </div>
                 <div class="step">
+                    <div class="step-number">5</div>
                     <div class="step-content">
-                        <h4>Get Your Optimized ISO</h4>
-                        <p>Find your gaming-optimized Windows 11 ISO in the output folder!</p>
+                        <h4>Done</h4>
+                        <p>Gaming-optimized ISO ready in output folder.</p>
                     </div>
                 </div>
             </div>
 
             <div class="warning">
-                <h4>Important Notes</h4>
-                <p>Always test on a virtual machine first. Some optimizations (like CPU mitigations) trade security for performance. Keep your original ISO as backup.</p>
+                <h4>Warning</h4>
+                <p>Test on a VM first. CPU mitigations disabled = less security, more FPS. Keep original ISO as backup.</p>
             </div>
         </div>
 
-        <footer class="footer">
-            <p>Based on <a href="https://github.com/ntdevlabs/tiny11builder">tiny11builder</a> and <a href="https://github.com/Atlas-OS/Atlas">Atlas OS</a></p>
-            <p style="margin-top: 10px;"><a href="https://github.com/Louchatfroff/NeoTiny11Builder">View on GitHub</a></p>
-        </footer>
+        <!-- Footer -->
+        <div class="footer">
+            <p>BASED ON <a href="https://github.com/ntdevlabs/tiny11builder" target="_blank">TINY11BUILDER</a> + <a href="https://github.com/Atlas-OS/Atlas" target="_blank">ATLAS OS</a></p>
+            <p style="margin-top: 15px;"><a href="https://github.com/Louchatfroff/NeoTiny11Builder" target="_blank">VIEW ON GITHUB</a></p>
+            <p style="margin-top: 15px;">MADE BY <a href="https://github.com/Louchatfroff" target="_blank">LOUCHAT</a></p>
+        </div>
     </div>
 
     <script>
+        // Custom Cursor
+        const cursor = document.getElementById('cursor');
+        const cursorDot = document.getElementById('cursor-dot');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX - 10 + 'px';
+            cursor.style.top = e.clientY - 10 + 'px';
+            cursorDot.style.left = e.clientX - 2 + 'px';
+            cursorDot.style.top = e.clientY - 2 + 'px';
+        });
+
+        // Cursor hover effects
+        document.querySelectorAll('.feature, .step, .copy-btn, a').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(1.5)';
+                cursor.style.borderColor = 'var(--accent-red)';
+            });
+            item.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                cursor.style.borderColor = 'var(--text-primary)';
+            });
+        });
+
+        // Loading Screen
+        const loading = document.getElementById('loading');
+        const container = document.getElementById('container');
+
+        loading.addEventListener('click', () => {
+            loading.classList.add('hidden');
+            container.classList.add('visible');
+        });
+
+        // Copy Command
         function copyCommand() {
             const command = 'irm https://neotiny11.vercel.app/install | iex';
             navigator.clipboard.writeText(command).then(() => {
                 const btn = document.querySelector('.copy-btn');
                 btn.textContent = 'Copied!';
-                setTimeout(() => btn.textContent = 'Copy', 2000);
+                btn.style.borderColor = 'var(--accent-red)';
+                btn.style.color = 'var(--accent-red)';
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.style.borderColor = '';
+                    btn.style.color = '';
+                }, 2000);
             });
         }
+
+        // Easter egg: Konami code
+        let konamiCode = [];
+        const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.key);
+            konamiCode = konamiCode.slice(-10);
+
+            if (konamiCode.join(',') === konamiSequence.join(',')) {
+                document.body.style.animation = 'glitch-1 0.5s infinite';
+                setTimeout(() => {
+                    document.body.style.animation = '';
+                }, 2000);
+            }
+        });
     </script>
 </body>
 </html>

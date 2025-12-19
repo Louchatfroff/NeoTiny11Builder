@@ -109,6 +109,40 @@ function Get-IsoSourcePath {
     }
 }
 
+function Get-LanguageSelection {
+    Write-Host ""
+    Write-Step "SELECT LANGUAGE / CHOISIR LA LANGUE" "STEP"
+    Write-Host ""
+    Write-Host "  [1] English (US)" -ForegroundColor White
+    Write-Host "      Primary: QWERTY (US)" -ForegroundColor Gray
+    Write-Host "      Secondary: AZERTY (French)" -ForegroundColor Gray
+    Write-Host ""
+    Write-Host "  [2] Francais (France)" -ForegroundColor White
+    Write-Host "      Principal: AZERTY (Francais)" -ForegroundColor Gray
+    Write-Host "      Secondaire: QWERTY (US)" -ForegroundColor Gray
+    Write-Host ""
+
+    do {
+        $selection = Read-Host "  Select language / Choisir la langue (1/2)"
+    } while ($selection -notin @("1", "2"))
+
+    if ($selection -eq "1") {
+        Write-Step "Selected: English (US) with QWERTY + AZERTY" "SUCCESS"
+        return @{
+            Code = "EN"
+            Name = "English (US)"
+            Keyboard = "QWERTY + AZERTY"
+        }
+    } else {
+        Write-Step "Selectionne: Francais avec AZERTY + QWERTY" "SUCCESS"
+        return @{
+            Code = "FR"
+            Name = "Francais (France)"
+            Keyboard = "AZERTY + QWERTY"
+        }
+    }
+}
+
 function Get-WindowsEdition {
     param([string]$SourcePath)
 
@@ -205,6 +239,7 @@ function Start-BuildProcess {
     param(
         [string]$SourcePath,
         [hashtable]$Edition,
+        [hashtable]$Language,
         [PSCustomObject]$Config
     )
 
@@ -214,10 +249,11 @@ function Start-BuildProcess {
     Write-Host ""
     Write-Step "Source: $SourcePath" "INFO"
     Write-Step "Edition: $($Edition.Name)" "INFO"
+    Write-Step "Language: $($Language.Name) [$($Language.Keyboard)]" "INFO"
     Write-Host ""
 
     # Phase 1: Copy source files
-    Write-Step "Phase 1/6: Copying source files..." "STEP"
+    Write-Step "Phase 1/7: Copying source files..." "STEP"
     $destPath = "$Script:ScratchPath\iso"
     if (Test-Path $destPath) {
         Remove-Item -Path $destPath -Recurse -Force
@@ -226,7 +262,7 @@ function Start-BuildProcess {
     Write-Step "Source files copied" "SUCCESS"
 
     # Phase 2: Extract WIM/ESD
-    Write-Step "Phase 2/6: Extracting Windows image..." "STEP"
+    Write-Step "Phase 2/7: Extracting Windows image..." "STEP"
     $mountPath = "$Script:ScratchPath\mount"
     if (-not (Test-Path $mountPath)) {
         New-Item -ItemType Directory -Path $mountPath -Force | Out-Null
@@ -249,23 +285,28 @@ function Start-BuildProcess {
     Write-Step "Image mounted" "SUCCESS"
 
     # Phase 3: Remove Bloatware
-    Write-Step "Phase 3/6: Removing bloatware..." "STEP"
+    Write-Step "Phase 3/7: Removing bloatware..." "STEP"
     & "$Script:ScriptsPath\Remove-Bloatware.ps1" -MountPath $mountPath -Config $Config
     Write-Step "Bloatware removed" "SUCCESS"
 
     # Phase 4: Apply Gaming Optimizations
-    Write-Step "Phase 4/6: Applying gaming optimizations..." "STEP"
+    Write-Step "Phase 4/7: Applying gaming optimizations..." "STEP"
     & "$Script:ScriptsPath\Set-GamingOptimizations.ps1" -MountPath $mountPath -Config $Config
     Write-Step "Gaming optimizations applied" "SUCCESS"
 
-    # Phase 5: Apply Service & Registry Tweaks
-    Write-Step "Phase 5/6: Optimizing services and registry..." "STEP"
+    # Phase 5: Apply Language & Keyboard Settings
+    Write-Step "Phase 5/7: Configuring language and keyboard..." "STEP"
+    & "$Script:ScriptsPath\Set-LanguageSettings.ps1" -MountPath $mountPath -Language $Language.Code
+    Write-Step "Language configured: $($Language.Name)" "SUCCESS"
+
+    # Phase 6: Apply Service & Registry Tweaks
+    Write-Step "Phase 6/7: Optimizing services and registry..." "STEP"
     & "$Script:ScriptsPath\Set-ServiceOptimizations.ps1" -MountPath $mountPath -Config $Config
     & "$Script:ScriptsPath\Set-RegistryTweaks.ps1" -MountPath $mountPath -Config $Config
     Write-Step "Services and registry optimized" "SUCCESS"
 
-    # Phase 6: Build ISO
-    Write-Step "Phase 6/6: Building ISO..." "STEP"
+    # Phase 7: Build ISO
+    Write-Step "Phase 7/7: Building ISO..." "STEP"
     & "$Script:ScriptsPath\Build-ISO.ps1" -ScratchPath $Script:ScratchPath -OutputPath $Script:OutputPath -Config $Config -ToolsPath $Script:ToolsPath
     Write-Step "ISO built successfully" "SUCCESS"
 
@@ -326,6 +367,9 @@ if (-not $SourcePath) {
     exit 1
 }
 
+# Get language selection
+$Language = Get-LanguageSelection
+
 # Get Windows edition
 $Edition = Get-WindowsEdition -SourcePath $SourcePath
 
@@ -338,9 +382,11 @@ Write-Host "===============================================================" -Fo
 Write-Host "  READY TO BUILD" -ForegroundColor Yellow
 Write-Host "===============================================================" -ForegroundColor Yellow
 Write-Host ""
-Write-Host "  Source:  $SourcePath" -ForegroundColor White
-Write-Host "  Edition: $($Edition.Name)" -ForegroundColor White
-Write-Host "  Output:  $Script:OutputPath\$($Config.General.IsoFileName)" -ForegroundColor White
+Write-Host "  Source:   $SourcePath" -ForegroundColor White
+Write-Host "  Edition:  $($Edition.Name)" -ForegroundColor White
+Write-Host "  Language: $($Language.Name)" -ForegroundColor White
+Write-Host "  Keyboard: $($Language.Keyboard)" -ForegroundColor White
+Write-Host "  Output:   $Script:OutputPath\$($Config.General.IsoFileName)" -ForegroundColor White
 Write-Host ""
 Write-Host "  This will create a gaming-optimized Windows 11 image." -ForegroundColor Gray
 Write-Host ""
@@ -349,7 +395,7 @@ $confirm = Read-Host "  Proceed with build? (Y/N)"
 
 if ($confirm -match "^[Yy]") {
     try {
-        Start-BuildProcess -SourcePath $SourcePath -Edition $Edition -Config $Config
+        Start-BuildProcess -SourcePath $SourcePath -Edition $Edition -Language $Language -Config $Config
     }
     catch {
         Write-Step "Build failed: $_" "ERROR"

@@ -1,0 +1,72 @@
+{
+    "General": {
+        "OutputFolder": "output",
+        "ScratchFolder": "scratch",
+        "IsoFileName": "NeoTiny11_Gaming.iso",
+        "KeepScratchFiles": false
+    },
+    "Bloatware": {
+        "RemoveEdge": true,
+        "RemoveOneDrive": true,
+        "RemoveXboxApps": false,
+        "RemoveTeams": true,
+        "RemoveCortana": true,
+        "RemoveWidgets": true,
+        "RemoveMaps": true,
+        "RemoveMail": true,
+        "RemoveNews": true,
+        "RemoveWeather": true,
+        "RemoveSolitaire": true,
+        "RemoveClipchamp": true,
+        "RemoveCopilot": true
+    },
+    "Privacy": {
+        "DisableTelemetry": true,
+        "DisableAdvertisingId": true,
+        "DisableActivityHistory": true,
+        "DisableLocationTracking": true,
+        "DisableDiagnosticData": true,
+        "DisableFeedbackRequests": true
+    },
+    "Gaming": {
+        "EnableGamingMode": true,
+        "DisableCpuMitigations": true,
+        "DisableFullscreenOptimizations": true,
+        "EnableHardwareGpuScheduling": true,
+        "DisableGameDVR": true,
+        "EnableGameMode": true,
+        "OptimizeNetworkForGaming": true,
+        "DisableNagleAlgorithm": true,
+        "DisableNetworkThrottling": true,
+        "OptimizeMouseKeyboard": true,
+        "SetHighPerformancePower": true,
+        "DisableCoreParking": true
+    },
+    "Services": {
+        "DisableSearchIndexing": true,
+        "DisableSysMain": false,
+        "DisablePrintSpooler": false,
+        "DisableRemoteRegistry": true,
+        "DisableFax": true,
+        "DisableXboxServices": false,
+        "DisableWindowsErrorReporting": true,
+        "DisableDiagTrack": true,
+        "DisableConnectedUserExperiences": true
+    },
+    "Security": {
+        "DisableDefender": false,
+        "DisableSmartScreen": false,
+        "DisableUAC": false,
+        "DisableFirewall": false
+    },
+    "Installation": {
+        "BypassTPMCheck": true,
+        "BypassSecureBootCheck": true,
+        "BypassRAMCheck": true,
+        "BypassCPUCheck": true,
+        "BypassStorageCheck": true,
+        "BypassMicrosoftAccount": true,
+        "EnableCompression": true,
+        "AutoUnattend": true
+    }
+}

@@ -1,0 +1,1353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unattend xmlns="urn:schemas-microsoft-com:unattend" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State">
+	<!--https://schneegans.de/windows/unattend-generator/?LanguageMode=Unattended&UILanguage=en-US&Locale=en-US&Keyboard=00000409&UseKeyboard2=true&Locale2=fr-FR&Keyboard2=0000040c&GeoLocation=244&ProcessorArchitecture=amd64&BypassRequirementsCheck=true&BypassNetworkCheck=true&KeepSensitiveFiles=true&ComputerNameMode=Custom&ComputerName=NeoTiny11-PC&CompactOsMode=Always&TimeZoneMode=Implicit&PartitionMode=Unattended&PartitionLayout=GPT&EspSize=300&RecoveryMode=None&DiskAssertionMode=Skip&WindowsEditionMode=Generic&WindowsEdition=pro&InstallFromMode=Automatic&PEMode=Default&UserAccountMode=Unattended&AccountName0=Utilisateur&AccountDisplayName0=Utilisateur&AccountPassword0=&AccountGroup0=Administrators&AutoLogonMode=Own&PasswordExpirationMode=Unlimited&LockoutMode=Default&HideFiles=HiddenSystem&ShowFileExtensions=true&TaskbarSearch=Icon&TaskbarIconsMode=Default&DisableWidgets=true&HideTaskViewButton=true&DisableBingResults=true&StartTilesMode=Default&StartPinsMode=Empty&DisableDefender=true&EnableLongPaths=true&DeleteJunctions=true&DisableAppSuggestions=true&PreventDeviceEncryption=true&HideEdgeFre=true&DisableEdgeStartupBoost=true&MakeEdgeUninstallable=true&DisableCoreIsolation=true&DeleteWindowsOld=true&DisableAutomaticRestartSignOn=true&EffectsMode=Performance&DeleteEdgeDesktopIcon=true&DesktopIconsMode=Custom&IconDocuments=true&IconDownloads=true&IconRecycleBin=true&IconThisPC=true&StartFoldersMode=Custom&StartFolderFileExplorer=true&StartFolderSettings=true&ParallelsTools=true&WifiMode=Skip&ExpressSettings=DisableAll&LockKeysMode=Skip&StickyKeysMode=Disabled&ColorMode=Custom&SystemColorTheme=Dark&AppsColorTheme=Dark&AccentColor=%23940000&AccentColorOnStart=true&EnableTransparency=true&WallpaperMode=Default&LockScreenMode=Default&Remove3DViewer=true&RemoveBingSearch=true&RemoveCalculator=true&RemoveCamera=true&RemoveClipchamp=true&RemoveClock=true&RemoveCopilot=true&RemoveCortana=true&RemoveDevHome=true&RemoveWindowsHello=true&RemoveFamily=true&RemoveFeedbackHub=true&RemoveGameAssist=true&RemoveGetHelp=true&RemoveHandwriting=true&RemoveInternetExplorer=true&RemoveMailCalendar=true&RemoveMaps=true&RemoveMathInputPanel=true&RemoveMediaFeatures=true&RemoveMixedReality=true&RemoveZuneVideo=true&RemoveNews=true&RemoveNotepad=true&RemoveOffice365=true&RemoveOneDrive=true&RemoveOneNote=true&RemoveOneSync=true&RemoveOutlook=true&RemovePaint=true&RemovePaint3D=true&RemovePeople=true&RemovePhotos=true&RemovePowerAutomate=true&RemovePowerShell2=true&RemoveQuickAssist=true&RemoveRecall=true&RemoveRdpClient=true&RemoveSkype=true&RemoveSolitaire=true&RemoveSpeech=true&RemoveStepsRecorder=true&RemoveStickyNotes=true&RemoveTeams=true&RemoveGetStarted=true&RemoveToDo=true&RemoveVoiceRecorder=true&RemoveWallet=true&RemoveWeather=true&RemoveFaxAndScan=true&RemoveWindowsMediaPlayer=true&RemoveZuneMusic=true&RemoveWordPad=true&RemoveXboxApps=true&RemoveYourPhone=true&FirstLogonScript0=%23Requires+-RunAsAdministrator%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%23+GRESIV.INFO+-+Script+First+Start+Windows+11%0D%0A%23+Script+de+configuration+initiale+avec+menu+interactif%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%0D%0A%23+Configuration+de+l%27encodage+pour+les+caract%C3%A8res+sp%C3%A9ciaux%0D%0A%5BConsole%5D%3A%3AOutputEncoding+%3D+%5BSystem.Text.Encoding%5D%3A%3AUTF8%0D%0A%24Host.UI.RawUI.WindowTitle+%3D+%22GRESIV.INFO+-+First+Start+Windows+11%22%0D%0A%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%23+VARIABLES+GLOBALES%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%24script%3ALang+%3D+%22FR%22%0D%0A%0D%0A%24Texts+%3D+%40%7B%0D%0A++++FR+%3D+%40%7B%0D%0A++++++++Title+%3D+%22GRESIV.INFO+-+Configuration+Initiale+Windows+11%22%0D%0A++++++++SelectLang+%3D+%22Choisissez+votre+langue+%2F+Select+your+language%22%0D%0A++++++++French+%3D+%22Francais%22%0D%0A++++++++English+%3D+%22Anglais%22%0D%0A++++++++MainMenu+%3D+%22MENU+PRINCIPAL%22%0D%0A++++++++Option1+%3D+%22Installer+Google+Chrome+%28silencieux%29%22%0D%0A++++++++Option2+%3D+%22Installer+applications+via+Ninite%22%0D%0A++++++++Option3+%3D+%22Installer+Microsoft+Office%22%0D%0A++++++++Option4+%3D+%22Installer+TOUT+%28Chrome+%2B+Ninite+%2B+Office%29%22%0D%0A++++++++Option5+%3D+%22Changer+de+langue%22%0D%0A++++++++Option0+%3D+%22Quitter%22%0D%0A++++++++Choice+%3D+%22Votre+choix%22%0D%0A++++++++InvalidChoice+%3D+%22Choix+invalide.+Veuillez+reessayer.%22%0D%0A++++++++PressKey+%3D+%22Appuyez+sur+une+touche+pour+continuer...%22%0D%0A++++++++Installing+%3D+%22Installation+en+cours%22%0D%0A++++++++Success+%3D+%22Installation+terminee+avec+succes+%21%22%0D%0A++++++++Error+%3D+%22Erreur+lors+de+l%27installation%22%0D%0A++++++++Downloading+%3D+%22Telechargement+en+cours%22%0D%0A++++++++NiniteMenu+%3D+%22MENU+NINITE+-+Selectionnez+vos+applications%22%0D%0A++++++++NiniteInstructions+%3D+%22Entrez+les+numeros+separes+par+des+virgules+%28ex%3A+1%2C3%2C5%29+ou+%27all%27+pour+tout%22%0D%0A++++++++NiniteConfirm+%3D+%22Applications+selectionnees%22%0D%0A++++++++OpeningNinite+%3D+%22Ouverture+de+Ninite+dans+votre+navigateur...%22%0D%0A++++++++NiniteUrl+%3D+%22URL+Ninite+generee%22%0D%0A++++++++Goodbye+%3D+%22Au+revoir+%21+Merci+d%27utiliser+GRESIV.INFO%22%0D%0A++++++++AdminRequired+%3D+%22Ce+script+necessite+les+droits+administrateur.%22%0D%0A++++++++RunAsAdmin+%3D+%22Veuillez+relancer+en+tant+qu%27administrateur.%22%0D%0A++++%7D%0D%0A++++EN+%3D+%40%7B%0D%0A++++++++Title+%3D+%22GRESIV.INFO+-+Windows+11+Initial+Setup%22%0D%0A++++++++SelectLang+%3D+%22Select+your+language+%2F+Choisissez+votre+langue%22%0D%0A++++++++French+%3D+%22French%22%0D%0A++++++++English+%3D+%22English%22%0D%0A++++++++MainMenu+%3D+%22MAIN+MENU%22%0D%0A++++++++Option1+%3D+%22Install+Google+Chrome+%28silent%29%22%0D%0A++++++++Option2+%3D+%22Install+applications+via+Ninite%22%0D%0A++++++++Option3+%3D+%22Install+Microsoft+Office%22%0D%0A++++++++Option4+%3D+%22Install+ALL+%28Chrome+%2B+Ninite+%2B+Office%29%22%0D%0A++++++++Option5+%3D+%22Change+language%22%0D%0A++++++++Option0+%3D+%22Exit%22%0D%0A++++++++Choice+%3D+%22Your+choice%22%0D%0A++++++++InvalidChoice+%3D+%22Invalid+choice.+Please+try+again.%22%0D%0A++++++++PressKey+%3D+%22Press+any+key+to+continue...%22%0D%0A++++++++Installing+%3D+%22Installing%22%0D%0A++++++++Success+%3D+%22Installation+completed+successfully%21%22%0D%0A++++++++Error+%3D+%22Error+during+installation%22%0D%0A++++++++Downloading+%3D+%22Downloading%22%0D%0A++++++++NiniteMenu+%3D+%22NINITE+MENU+-+Select+your+applications%22%0D%0A++++++++NiniteInstructions+%3D+%22Enter+numbers+separated+by+commas+%28e.g.%3A+1%2C3%2C5%29+or+%27all%27+for+everything%22%0D%0A++++++++NiniteConfirm+%3D+%22Selected+applications%22%0D%0A++++++++OpeningNinite+%3D+%22Opening+Ninite+in+your+browser...%22%0D%0A++++++++NiniteUrl+%3D+%22Generated+Ninite+URL%22%0D%0A++++++++Goodbye+%3D+%22Goodbye%21+Thank+you+for+using+GRESIV.INFO%22%0D%0A++++++++AdminRequired+%3D+%22This+script+requires+administrator+privileges.%22%0D%0A++++++++RunAsAdmin+%3D+%22Please+run+as+administrator.%22%0D%0A++++%7D%0D%0A%7D%0D%0A%0D%0A%23+Liste+des+applications+Ninite+disponibles%0D%0A%24NiniteApps+%3D+%40%7B%0D%0A++++1++%3D+%40%7B+Name+%3D+%227-Zip%22%3B+Code+%3D+%227zip%22+%7D%0D%0A++++2++%3D+%40%7B+Name+%3D+%22VLC%22%3B+Code+%3D+%22vlc%22+%7D%0D%0A++++3++%3D+%40%7B+Name+%3D+%22Firefox%22%3B+Code+%3D+%22firefox%22+%7D%0D%0A++++4++%3D+%40%7B+Name+%3D+%22Zoom%22%3B+Code+%3D+%22zoom%22+%7D%0D%0A++++5++%3D+%40%7B+Name+%3D+%22TeamViewer%22%3B+Code+%3D+%22teamviewer15%22+%7D%0D%0A++++6++%3D+%40%7B+Name+%3D+%22Adobe+Reader%22%3B+Code+%3D+%22reader%22+%7D%0D%0A++++7++%3D+%40%7B+Name+%3D+%22LibreOffice%22%3B+Code+%3D+%22libreoffice%22+%7D%0D%0A++++8++%3D+%40%7B+Name+%3D+%22Notepad%2B%2B%22%3B+Code+%3D+%22notepadplusplus%22+%7D%0D%0A++++9++%3D+%40%7B+Name+%3D+%22WinRAR%22%3B+Code+%3D+%22winrar%22+%7D%0D%0A++++10+%3D+%40%7B+Name+%3D+%22Spotify%22%3B+Code+%3D+%22spotify%22+%7D%0D%0A++++11+%3D+%40%7B+Name+%3D+%22Discord%22%3B+Code+%3D+%22discord%22+%7D%0D%0A++++12+%3D+%40%7B+Name+%3D+%22Steam%22%3B+Code+%3D+%22steam%22+%7D%0D%0A++++13+%3D+%40%7B+Name+%3D+%22Java+Runtime%22%3B+Code+%3D+%22java8%22+%7D%0D%0A++++14+%3D+%40%7B+Name+%3D+%22.NET+Runtime%22%3B+Code+%3D+%22dotnet48%22+%7D%0D%0A++++15+%3D+%40%7B+Name+%3D+%22Malwarebytes%22%3B+Code+%3D+%22malwarebytes%22+%7D%0D%0A%7D%0D%0A%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%23+FONCTIONS+UTILITAIRES%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%0D%0Afunction+Get-Text+%7B%0D%0A++++param%28%5Bstring%5D%24Key%29%0D%0A++++return+%24Texts%5B%24script%3ALang%5D%5B%24Key%5D%0D%0A%7D%0D%0A%0D%0Afunction+Show-Header+%7B%0D%0A++++Clear-Host%0D%0A++++%24title+%3D+Get-Text+%22Title%22%0D%0A++++%24border+%3D+%22%3D%22+*+70%0D%0A++++%0D%0A++++Write-Host+%22%22%0D%0A++++Write-Host+%24border+-ForegroundColor+Cyan%0D%0A++++Write-Host+%22%22%0D%0A++++Write-Host+%22+++%24title%22+-ForegroundColor+White%0D%0A++++Write-Host+%22%22%0D%0A++++Write-Host+%22+++GRESIV.INFO+-+Nord+Drome+%2F+Sud+Isere%22+-ForegroundColor+Gray%0D%0A++++Write-Host+%22%22%0D%0A++++Write-Host+%24border+-ForegroundColor+Cyan%0D%0A++++Write-Host+%22%22%0D%0A%7D%0D%0A%0D%0Afunction+Show-Message+%7B%0D%0A++++param%28%0D%0A++++++++%5Bstring%5D%24Message%2C%0D%0A++++++++%5Bstring%5D%24Type+%3D+%22Info%22%0D%0A++++%29%0D%0A++++%0D%0A++++switch+%28%24Type%29+%7B%0D%0A++++++++%22Success%22+%7B+Write-Host+%22++%5BOK%5D+%24Message%22+-ForegroundColor+Green+%7D%0D%0A++++++++%22Error%22+++%7B+Write-Host+%22++%5BX%5D+%24Message%22+-ForegroundColor+Red+%7D%0D%0A++++++++%22Warning%22+%7B+Write-Host+%22++%5B%21%5D+%24Message%22+-ForegroundColor+Yellow+%7D%0D%0A++++++++%22Info%22++++%7B+Write-Host+%22++%5Bi%5D+%24Message%22+-ForegroundColor+Cyan+%7D%0D%0A++++++++default+++%7B+Write-Host+%22++%24Message%22+%7D%0D%0A++++%7D%0D%0A%7D%0D%0A%0D%0Afunction+Wait-KeyPress+%7B%0D%0A++++Write-Host+%22%22%0D%0A++++Write-Host+%22++%24%28Get-Text+%27PressKey%27%29%22+-ForegroundColor+DarkGray%0D%0A++++%24null+%3D+%24Host.UI.RawUI.ReadKey%28%22NoEcho%2CIncludeKeyDown%22%29%0D%0A%7D%0D%0A%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%23+MENU+SELECTION+DE+LANGUE%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%0D%0Afunction+Show-LanguageMenu+%7B%0D%0A++++Show-Header%0D%0A++++%0D%0A++++Write-Host+%22++%24%28Get-Text+%27SelectLang%27%29%22+-ForegroundColor+Yellow%0D%0A++++Write-Host+%22%22%0D%0A++++Write-Host+%22++%5B1%5D+Francais+%2F+French%22+-ForegroundColor+White%0D%0A++++Write-Host+%22++%5B2%5D+English+%2F+Anglais%22+-ForegroundColor+White%0D%0A++++Write-Host+%22%22%0D%0A++++%0D%0A++++%24choice+%3D+Read-Host+%22++%3E+%22%0D%0A++++%0D%0A++++switch+%28%24choice%29+%7B%0D%0A++++++++%221%22+%7B+%24script%3ALang+%3D+%22FR%22+%7D%0D%0A++++++++%222%22+%7B+%24script%3ALang+%3D+%22EN%22+%7D%0D%0A++++++++default+%7B+%24script%3ALang+%3D+%22FR%22+%7D%0D%0A++++%7D%0D%0A%7D%0D%0A%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%23+INSTALLATION+CHROME%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%0D%0Afunction+Install-Chrome+%7B%0D%0A++++Show-Header%0D%0A++++Show-Message+%22%24%28Get-Text+%27Downloading%27%29+Google+Chrome...%22+%22Info%22%0D%0A++++%0D%0A++++%24chromeInstaller+%3D+%22%24env%3ATEMP%5CChromeSetup.exe%22%0D%0A++++%24chromeUrl+%3D+%22https%3A%2F%2Fdl.google.com%2Fchrome%2Finstall%2FGoogleChromeStandaloneEnterprise64.msi%22%0D%0A++++%24chromeMsi+%3D+%22%24env%3ATEMP%5CGoogleChrome.msi%22%0D%0A++++%0D%0A++++try+%7B%0D%0A++++++++%23+T%C3%A9l%C3%A9chargement+du+MSI+Enterprise+%28meilleur+pour+installation+silencieuse%29%0D%0A++++++++Show-Message+%22%24%28Get-Text+%27Downloading%27%29...%22+%22Info%22%0D%0A++++++++Invoke-WebRequest+-Uri+%24chromeUrl+-OutFile+%24chromeMsi+-UseBasicParsing%0D%0A++++++++%0D%0A++++++++%23+Installation+silencieuse%0D%0A++++++++Show-Message+%22%24%28Get-Text+%27Installing%27%29+Google+Chrome...%22+%22Info%22%0D%0A++++++++%24process+%3D+Start-Process+-FilePath+%22msiexec.exe%22+-ArgumentList+%22%2Fi+%60%22%24chromeMsi%60%22+%2Fqn+%2Fnorestart%22+-Wait+-PassThru%0D%0A++++++++%0D%0A++++++++if+%28%24process.ExitCode+-eq+0%29+%7B%0D%0A++++++++++++Show-Message+%22Google+Chrome+-+%24%28Get-Text+%27Success%27%29%22+%22Success%22%0D%0A++++++++%7D+else+%7B%0D%0A++++++++++++Show-Message+%22Google+Chrome+-+%24%28Get-Text+%27Error%27%29+%28Code%3A+%24%28%24process.ExitCode%29%29%22+%22Error%22%0D%0A++++++++%7D%0D%0A++++++++%0D%0A++++++++%23+Nettoyage%0D%0A++++++++Remove-Item+%24chromeMsi+-Force+-ErrorAction+SilentlyContinue%0D%0A++++%7D%0D%0A++++catch+%7B%0D%0A++++++++Show-Message+%22Google+Chrome+-+%24%28Get-Text+%27Error%27%29%3A+%24_%22+%22Error%22%0D%0A++++%7D%0D%0A++++%0D%0A++++Wait-KeyPress%0D%0A%7D%0D%0A%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%23+MENU+NINITE%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%0D%0Afunction+Show-NiniteMenu+%7B%0D%0A++++Show-Header%0D%0A++++Write-Host+%22++%24%28Get-Text+%27NiniteMenu%27%29%22+-ForegroundColor+Yellow%0D%0A++++Write-Host+%22%22%0D%0A++++%0D%0A++++%23+Affichage+des+applications+en+colonnes%0D%0A++++%24apps+%3D+%24NiniteApps.GetEnumerator%28%29+%7C+Sort-Object+Key%0D%0A++++%24column+%3D+0%0D%0A++++%0D%0A++++foreach+%28%24app+in+%24apps%29+%7B%0D%0A++++++++%24text+%3D+%22++%5B%7B0%2C2%7D%5D+%7B1%2C-20%7D%22+-f+%24app.Key%2C+%24app.Value.Name%0D%0A++++++++Write-Host+%24text+-NoNewline+-ForegroundColor+White%0D%0A++++++++%24column%2B%2B%0D%0A++++++++if+%28%24column+-eq+3%29+%7B%0D%0A++++++++++++Write-Host+%22%22%0D%0A++++++++++++%24column+%3D+0%0D%0A++++++++%7D%0D%0A++++%7D%0D%0A++++%0D%0A++++if+%28%24column+-ne+0%29+%7B+Write-Host+%22%22+%7D%0D%0A++++%0D%0A++++Write-Host+%22%22%0D%0A++++Write-Host+%22++%24%28Get-Text+%27NiniteInstructions%27%29%22+-ForegroundColor+Gray%0D%0A++++Write-Host+%22%22%0D%0A++++%0D%0A++++%24selection+%3D+Read-Host+%22++%3E+%22%0D%0A++++%0D%0A++++if+%28%5Bstring%5D%3A%3AIsNullOrWhiteSpace%28%24selection%29%29+%7B%0D%0A++++++++return%0D%0A++++%7D%0D%0A++++%0D%0A++++%24selectedCodes+%3D+%40%28%29%0D%0A++++%0D%0A++++if+%28%24selection.ToLower%28%29+-eq+%22all%22%29+%7B%0D%0A++++++++%24selectedCodes+%3D+%24NiniteApps.Values+%7C+ForEach-Object+%7B+%24_.Code+%7D%0D%0A++++%7D+else+%7B%0D%0A++++++++%24numbers+%3D+%24selection+-split+%22%2C%22+%7C+ForEach-Object+%7B+%24_.Trim%28%29+%7D%0D%0A++++++++foreach+%28%24num+in+%24numbers%29+%7B%0D%0A++++++++++++if+%28%24NiniteApps.ContainsKey%28%5Bint%5D%24num%29%29+%7B%0D%0A++++++++++++++++%24selectedCodes+%2B%3D+%24NiniteApps%5B%5Bint%5D%24num%5D.Code%0D%0A++++++++++++%7D%0D%0A++++++++%7D%0D%0A++++%7D%0D%0A++++%0D%0A++++if+%28%24selectedCodes.Count+-gt+0%29+%7B%0D%0A++++++++%24niniteUrl+%3D+%22https%3A%2F%2Fninite.com%2F%22+%2B+%28%24selectedCodes+-join+%22-%22%29+%2B+%22%2Fninite.exe%22%0D%0A++++++++%0D%0A++++++++Write-Host+%22%22%0D%0A++++++++Show-Message+%22%24%28Get-Text+%27NiniteUrl%27%29%3A+%24niniteUrl%22+%22Info%22%0D%0A++++++++Show-Message+%22%24%28Get-Text+%27OpeningNinite%27%29%22+%22Info%22%0D%0A++++++++%0D%0A++++++++%23+T%C3%A9l%C3%A9chargement+et+ex%C3%A9cution+du+Ninite%0D%0A++++++++%24niniteExe+%3D+%22%24env%3ATEMP%5CNinite.exe%22%0D%0A++++++++%0D%0A++++++++try+%7B%0D%0A++++++++++++Invoke-WebRequest+-Uri+%24niniteUrl+-OutFile+%24niniteExe+-UseBasicParsing%0D%0A++++++++++++Show-Message+%22%24%28Get-Text+%27Installing%27%29...%22+%22Info%22%0D%0A++++++++++++Start-Process+-FilePath+%24niniteExe+-Wait%0D%0A++++++++++++Show-Message+%22Ninite+-+%24%28Get-Text+%27Success%27%29%22+%22Success%22%0D%0A++++++++++++Remove-Item+%24niniteExe+-Force+-ErrorAction+SilentlyContinue%0D%0A++++++++%7D%0D%0A++++++++catch+%7B%0D%0A++++++++++++%23+Si+le+t%C3%A9l%C3%A9chargement+%C3%A9choue%2C+ouvrir+dans+le+navigateur%0D%0A++++++++++++Start-Process+%24niniteUrl%0D%0A++++++++++++Show-Message+%22%24%28Get-Text+%27OpeningNinite%27%29%22+%22Info%22%0D%0A++++++++%7D%0D%0A++++%7D%0D%0A++++%0D%0A++++Wait-KeyPress%0D%0A%7D%0D%0A%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%23+INSTALLATION+OFFICE%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%0D%0Afunction+Install-Office+%7B%0D%0A++++Show-Header%0D%0A++++Show-Message+%22%24%28Get-Text+%27Installing%27%29+Microsoft+Office...%22+%22Info%22%0D%0A++++%0D%0A++++try+%7B%0D%0A++++++++%23+Ex%C3%A9cution+de+la+commande+IRM+pour+Office%0D%0A++++++++Show-Message+%22%24%28Get-Text+%27Downloading%27%29...%22+%22Info%22%0D%0A++++++++%0D%0A++++++++%23+Cr%C3%A9er+un+script+temporaire+pour+ex%C3%A9cuter+la+commande%0D%0A++++++++%24officeScript+%3D+%40%22%0D%0Airm+https%3A%2F%2Foffice-unnatended.vercel.app%2F+%7C+iex%0D%0A%22%40%0D%0A++++++++%0D%0A++++++++%23+Ex%C3%A9cution+dans+une+nouvelle+fen%C3%AAtre+PowerShell%0D%0A++++++++Start-Process+powershell.exe+-ArgumentList+%22-NoProfile+-ExecutionPolicy+Bypass+-Command+%60%22%24officeScript%60%22%22+-Wait%0D%0A++++++++%0D%0A++++++++Show-Message+%22Microsoft+Office+-+%24%28Get-Text+%27Success%27%29%22+%22Success%22%0D%0A++++%7D%0D%0A++++catch+%7B%0D%0A++++++++Show-Message+%22Microsoft+Office+-+%24%28Get-Text+%27Error%27%29%3A+%24_%22+%22Error%22%0D%0A++++%7D%0D%0A++++%0D%0A++++Wait-KeyPress%0D%0A%7D%0D%0A%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%23+INSTALLATION+COMPLETE%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%0D%0Afunction+Install-All+%7B%0D%0A++++Show-Header%0D%0A++++Write-Host+%22++Installation+complete+en+cours...%22+-ForegroundColor+Yellow%0D%0A++++Write-Host+%22%22%0D%0A++++%0D%0A++++%23+Chrome%0D%0A++++Show-Message+%221%2F3+-+Google+Chrome%22+%22Info%22%0D%0A++++Install-ChromeSilent%0D%0A++++%0D%0A++++%23+Ninite+avec+apps+par+d%C3%A9faut%0D%0A++++Show-Message+%222%2F3+-+Applications+Ninite+%287-Zip%2C+VLC%2C+Adobe+Reader%29%22+%22Info%22%0D%0A++++Install-NiniteDefault%0D%0A++++%0D%0A++++%23+Office%0D%0A++++Show-Message+%223%2F3+-+Microsoft+Office%22+%22Info%22%0D%0A++++Install-OfficeSilent%0D%0A++++%0D%0A++++Write-Host+%22%22%0D%0A++++Show-Message+%22%24%28Get-Text+%27Success%27%29%22+%22Success%22%0D%0A++++Wait-KeyPress%0D%0A%7D%0D%0A%0D%0Afunction+Install-ChromeSilent+%7B%0D%0A++++%24chromeMsi+%3D+%22%24env%3ATEMP%5CGoogleChrome.msi%22%0D%0A++++%24chromeUrl+%3D+%22https%3A%2F%2Fdl.google.com%2Fchrome%2Finstall%2FGoogleChromeStandaloneEnterprise64.msi%22%0D%0A++++%0D%0A++++try+%7B%0D%0A++++++++Invoke-WebRequest+-Uri+%24chromeUrl+-OutFile+%24chromeMsi+-UseBasicParsing%0D%0A++++++++Start-Process+-FilePath+%22msiexec.exe%22+-ArgumentList+%22%2Fi+%60%22%24chromeMsi%60%22+%2Fqn+%2Fnorestart%22+-Wait%0D%0A++++++++Remove-Item+%24chromeMsi+-Force+-ErrorAction+SilentlyContinue%0D%0A++++++++Show-Message+%22Chrome+OK%22+%22Success%22%0D%0A++++%7D%0D%0A++++catch+%7B%0D%0A++++++++Show-Message+%22Chrome+-+%24%28Get-Text+%27Error%27%29%22+%22Error%22%0D%0A++++%7D%0D%0A%7D%0D%0A%0D%0Afunction+Install-NiniteDefault+%7B%0D%0A++++%24defaultApps+%3D+%40%28%227zip%22%2C+%22vlc%22%2C+%22reader%22%29%0D%0A++++%24niniteUrl+%3D+%22https%3A%2F%2Fninite.com%2F%22+%2B+%28%24defaultApps+-join+%22-%22%29+%2B+%22%2Fninite.exe%22%0D%0A++++%24niniteExe+%3D+%22%24env%3ATEMP%5CNinite.exe%22%0D%0A++++%0D%0A++++try+%7B%0D%0A++++++++Invoke-WebRequest+-Uri+%24niniteUrl+-OutFile+%24niniteExe+-UseBasicParsing%0D%0A++++++++Start-Process+-FilePath+%24niniteExe+-Wait%0D%0A++++++++Remove-Item+%24niniteExe+-Force+-ErrorAction+SilentlyContinue%0D%0A++++++++Show-Message+%22Ninite+OK%22+%22Success%22%0D%0A++++%7D%0D%0A++++catch+%7B%0D%0A++++++++Show-Message+%22Ninite+-+%24%28Get-Text+%27Error%27%29%22+%22Error%22%0D%0A++++%7D%0D%0A%7D%0D%0A%0D%0Afunction+Install-OfficeSilent+%7B%0D%0A++++try+%7B%0D%0A++++++++%24officeScript+%3D+%22irm+https%3A%2F%2Foffice-unnatended.vercel.app%2F+%7C+iex%22%0D%0A++++++++Start-Process+powershell.exe+-ArgumentList+%22-NoProfile+-ExecutionPolicy+Bypass+-Command+%60%22%24officeScript%60%22%22+-Wait%0D%0A++++++++Show-Message+%22Office+OK%22+%22Success%22%0D%0A++++%7D%0D%0A++++catch+%7B%0D%0A++++++++Show-Message+%22Office+-+%24%28Get-Text+%27Error%27%29%22+%22Error%22%0D%0A++++%7D%0D%0A%7D%0D%0A%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%23+MENU+PRINCIPAL%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%0D%0Afunction+Show-MainMenu+%7B%0D%0A++++while+%28%24true%29+%7B%0D%0A++++++++Show-Header%0D%0A++++++++%0D%0A++++++++Write-Host+%22++%24%28Get-Text+%27MainMenu%27%29%22+-ForegroundColor+Yellow%0D%0A++++++++Write-Host+%22%22%0D%0A++++++++Write-Host+%22++%5B1%5D+%24%28Get-Text+%27Option1%27%29%22+-ForegroundColor+White%0D%0A++++++++Write-Host+%22++%5B2%5D+%24%28Get-Text+%27Option2%27%29%22+-ForegroundColor+White%0D%0A++++++++Write-Host+%22++%5B3%5D+%24%28Get-Text+%27Option3%27%29%22+-ForegroundColor+White%0D%0A++++++++Write-Host+%22%22%0D%0A++++++++Write-Host+%22++%5B4%5D+%24%28Get-Text+%27Option4%27%29%22+-ForegroundColor+Green%0D%0A++++++++Write-Host+%22%22%0D%0A++++++++Write-Host+%22++%5B5%5D+%24%28Get-Text+%27Option5%27%29%22+-ForegroundColor+Gray%0D%0A++++++++Write-Host+%22++%5B0%5D+%24%28Get-Text+%27Option0%27%29%22+-ForegroundColor+Gray%0D%0A++++++++Write-Host+%22%22%0D%0A++++++++%0D%0A++++++++%24choice+%3D+Read-Host+%22++%24%28Get-Text+%27Choice%27%29%22%0D%0A++++++++%0D%0A++++++++switch+%28%24choice%29+%7B%0D%0A++++++++++++%221%22+%7B+Install-Chrome+%7D%0D%0A++++++++++++%222%22+%7B+Show-NiniteMenu+%7D%0D%0A++++++++++++%223%22+%7B+Install-Office+%7D%0D%0A++++++++++++%224%22+%7B+Install-All+%7D%0D%0A++++++++++++%225%22+%7B+Show-LanguageMenu+%7D%0D%0A++++++++++++%220%22+%7B+%0D%0A++++++++++++++++Show-Header%0D%0A++++++++++++++++Show-Message+%22%24%28Get-Text+%27Goodbye%27%29%22+%22Info%22%0D%0A++++++++++++++++Write-Host+%22%22%0D%0A++++++++++++++++exit+%0D%0A++++++++++++%7D%0D%0A++++++++++++default+%7B%0D%0A++++++++++++++++Show-Message+%22%24%28Get-Text+%27InvalidChoice%27%29%22+%22Warning%22%0D%0A++++++++++++++++Start-Sleep+-Seconds+1%0D%0A++++++++++++%7D%0D%0A++++++++%7D%0D%0A++++%7D%0D%0A%7D%0D%0A%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%23+POINT+D%27ENTREE%0D%0A%23+%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%0D%0A%23+V%C3%A9rification+des+droits+admin%0D%0A%24isAdmin+%3D+%28%5BSecurity.Principal.WindowsPrincipal%5D+%5BSecurity.Principal.WindowsIdentity%5D%3A%3AGetCurrent%28%29%29.IsInRole%28%5BSecurity.Principal.WindowsBuiltInRole%5D%3A%3AAdministrator%29%0D%0A%0D%0Aif+%28-not+%24isAdmin%29+%7B%0D%0A++++Write-Host+%22%22%0D%0A++++Write-Host+%22++%5B%21%5D+Ce+script+necessite+les+droits+administrateur.%22+-ForegroundColor+Red%0D%0A++++Write-Host+%22++%5B%21%5D+This+script+requires+administrator+privileges.%22+-ForegroundColor+Red%0D%0A++++Write-Host+%22%22%0D%0A++++Write-Host+%22++Relancement+en+tant+qu%27administrateur...%22+-ForegroundColor+Yellow%0D%0A++++Write-Host+%22++Relaunching+as+administrator...%22+-ForegroundColor+Yellow%0D%0A++++Write-Host+%22%22%0D%0A++++%0D%0A++++%23+Relancer+en+admin%0D%0A++++Start-Process+powershell.exe+-ArgumentList+%22-NoProfile+-ExecutionPolicy+Bypass+-File+%60%22%24PSCommandPath%60%22%22+-Verb+RunAs%0D%0A++++exit%0D%0A%7D%0D%0A%0D%0A%23+Lancement%0D%0AShow-LanguageMenu%0D%0AShow-MainMenu&FirstLogonScriptType0=Ps1&WdacMode=Configure&WdacAuditMode=AuditingOnBootFailure&WdacScriptMode=Restricted&AppLockerMode=Skip-->
+	<settings pass="offlineServicing"></settings>
+	<settings pass="windowsPE">
+		<component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<UILanguage>en-US</UILanguage>
+		</component>
+		<component name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<ImageInstall>
+				<OSImage>
+					<Compact>true</Compact>
+					<InstallTo>
+						<DiskID>0</DiskID>
+						<PartitionID>3</PartitionID>
+					</InstallTo>
+				</OSImage>
+			</ImageInstall>
+			<UserData>
+				<ProductKey>
+					<Key>VK7JG-NPHTM-C97JM-9MPGT-3V66T</Key>
+					<WillShowUI>OnError</WillShowUI>
+				</ProductKey>
+				<AcceptEula>true</AcceptEula>
+			</UserData>
+			<UseConfigurationSet>false</UseConfigurationSet>
+			<RunSynchronous>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>1</Order>
+					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassTPMCheck /t REG_DWORD /d 1 /f</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>2</Order>
+					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassSecureBootCheck /t REG_DWORD /d 1 /f</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>3</Order>
+					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassRAMCheck /t REG_DWORD /d 1 /f</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>4</Order>
+					<Path>cmd.exe /c "&gt;&gt;"X:\diskpart.txt" (echo:SELECT DISK=0&amp;echo:CLEAN&amp;echo:CONVERT GPT&amp;echo:CREATE PARTITION EFI SIZE=300&amp;echo:FORMAT QUICK FS=FAT32 LABEL=^"System^"&amp;echo:ASSIGN LETTER=S&amp;echo:CREATE PARTITION MSR SIZE=16&amp;echo:CREATE PARTITION PRIMARY)"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>5</Order>
+					<Path>cmd.exe /c "&gt;&gt;"X:\diskpart.txt" (echo:FORMAT QUICK FS=NTFS LABEL=^"Windows^"&amp;echo:ASSIGN LETTER=W)"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>6</Order>
+					<Path>cmd.exe /c "diskpart.exe /s "X:\diskpart.txt" &gt;&gt;"X:\diskpart.log" || ( type "X:\diskpart.log" &amp; echo diskpart encountered an error. &amp; pause &amp; exit /b 1 )"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>7</Order>
+					<Path>cmd.exe /c "&gt;&gt;"X:\defender.vbs" (echo:WScript.Echo ^"Scanning for newly created SYSTEM registry hive file to disable Windows Defender services...^"&amp;echo:Set fso = CreateObject(^"Scripting.FileSystemObject^"^))"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>8</Order>
+					<Path>cmd.exe /c "&gt;&gt;"X:\defender.vbs" (echo:Set existing = CreateObject(^"Scripting.Dictionary^"^)&amp;echo:Function Execute(command^)&amp;echo:WScript.Echo ^"Running command '^" + command + ^"'^"&amp;echo:Set shell = CreateObject(^"WScript.Shell^"^))"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>9</Order>
+					<Path>cmd.exe /c "&gt;&gt;"X:\defender.vbs" (echo:Set exec = shell.Exec(command^)&amp;echo:Do While exec.Status = 0&amp;echo:WScript.Sleep 100&amp;echo:Loop&amp;echo:WScript.Echo exec.StdOut.ReadAll&amp;echo:WScript.Echo exec.StdErr.ReadAll&amp;echo:Execute = exec.ExitCode)"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>10</Order>
+					<Path>cmd.exe /c "&gt;&gt;"X:\defender.vbs" (echo:End Function&amp;echo:Function FindHiveFiles&amp;echo:Set FindHiveFiles = CreateObject(^"Scripting.Dictionary^"^)&amp;echo:For Each drive In fso.Drives&amp;echo:If drive.IsReady And drive.DriveLetter ^&lt;^&gt; ^"X^" Then)"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>11</Order>
+					<Path>cmd.exe /c "&gt;&gt;"X:\defender.vbs" (echo:For Each folder In Array(^"$Windows.~BT\NewOS\Windows^", ^"Windows^"^)&amp;echo:file = fso.BuildPath(fso.BuildPath(drive.RootFolder, folder^), ^"System32\config\SYSTEM^"^))"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>12</Order>
+					<Path>cmd.exe /c "&gt;&gt;"X:\defender.vbs" (echo:If fso.FileExists(file^) And fso.FileExists(file + ^".LOG1^"^) And fso.FileExists(file + ^".LOG2^"^) Then&amp;echo:FindHiveFiles.Add file, Nothing&amp;echo:End If&amp;echo:Next&amp;echo:End If&amp;echo:Next&amp;echo:End Function)"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>13</Order>
+					<Path>cmd.exe /c "&gt;&gt;"X:\defender.vbs" (echo:For Each file In FindHiveFiles&amp;echo:WScript.Echo ^"Will ignore file at '^" + file + ^"' because it was already present when Windows Setup started.^"&amp;echo:existing.Add file, Nothing&amp;echo:Next&amp;echo:Do)"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>14</Order>
+					<Path>cmd.exe /c "&gt;&gt;"X:\defender.vbs" (echo:For Each file In FindHiveFiles&amp;echo:If Not existing.Exists(file^) Then&amp;echo:ret = 1&amp;echo:While ret ^&gt; 0&amp;echo:WScript.Sleep 500&amp;echo:ret = Execute(^"reg.exe LOAD HKLM\mount ^" + file^)&amp;echo:Wend)"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>15</Order>
+					<Path>cmd.exe /c "&gt;&gt;"X:\defender.vbs" (echo:For Each service In Array(^"Sense^", ^"WdBoot^", ^"WdFilter^", ^"WdNisDrv^", ^"WdNisSvc^", ^"WinDefend^"^))"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>16</Order>
+					<Path>cmd.exe /c "&gt;&gt;"X:\defender.vbs" (echo:ret = Execute(^"reg.exe ADD HKLM\mount\ControlSet001\Services\^" + service + ^" /v Start /t REG_DWORD /d 4 /f^"^)&amp;echo:Next&amp;echo:ret = Execute(^"reg.exe UNLOAD HKLM\mount^"^))"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>17</Order>
+					<Path>cmd.exe /c "&gt;&gt;"X:\defender.vbs" (echo:WScript.Echo ^"Found and successfully modified SYSTEM registry hive file at '^" + file + ^"'. This window will now close.^"&amp;echo:WScript.Sleep 5000&amp;echo:Exit Do&amp;echo:End If&amp;echo:WScript.Sleep 1000&amp;echo:Next)"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>18</Order>
+					<Path>cmd.exe /c "&gt;&gt;"X:\defender.vbs" (echo:Loop)"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>19</Order>
+					<Path>cmd.exe /c "start /MIN cscript.exe //E:vbscript X:\defender.vbs"</Path>
+				</RunSynchronousCommand>
+			</RunSynchronous>
+		</component>
+	</settings>
+	<settings pass="generalize"></settings>
+	<settings pass="specialize">
+		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<ComputerName>NeoTiny11-PC</ComputerName>
+		</component>
+		<component name="Microsoft-Windows-Deployment" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<RunSynchronous>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>1</Order>
+					<Path>powershell.exe -WindowStyle "Normal" -NoProfile -Command "$xml = [xml]::new(); $xml.Load('C:\Windows\Panther\unattend.xml'); $sb = [scriptblock]::Create( $xml.unattend.Extensions.ExtractScript ); Invoke-Command -ScriptBlock $sb -ArgumentList $xml;"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>2</Order>
+					<Path>powershell.exe -WindowStyle "Normal" -ExecutionPolicy "Unrestricted" -NoProfile -File "C:\Windows\Setup\Scripts\Specialize.ps1"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>3</Order>
+					<Path>reg.exe load "HKU\DefaultUser" "C:\Users\Default\NTUSER.DAT"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>4</Order>
+					<Path>powershell.exe -WindowStyle "Normal" -ExecutionPolicy "Unrestricted" -NoProfile -File "C:\Windows\Setup\Scripts\DefaultUser.ps1"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>5</Order>
+					<Path>reg.exe unload "HKU\DefaultUser"</Path>
+				</RunSynchronousCommand>
+			</RunSynchronous>
+		</component>
+	</settings>
+	<settings pass="auditSystem"></settings>
+	<settings pass="auditUser"></settings>
+	<settings pass="oobeSystem">
+		<component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<InputLocale>0409:00000409;040c:0000040c</InputLocale>
+			<SystemLocale>en-US</SystemLocale>
+			<UILanguage>en-US</UILanguage>
+			<UserLocale>en-US</UserLocale>
+		</component>
+		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<UserAccounts>
+				<LocalAccounts>
+					<LocalAccount wcm:action="add">
+						<Name>Utilisateur</Name>
+						<DisplayName>Utilisateur</DisplayName>
+						<Group>Administrators</Group>
+						<Password>
+							<Value></Value>
+							<PlainText>true</PlainText>
+						</Password>
+					</LocalAccount>
+				</LocalAccounts>
+			</UserAccounts>
+			<AutoLogon>
+				<Username>Utilisateur</Username>
+				<Enabled>true</Enabled>
+				<LogonCount>1</LogonCount>
+				<Password>
+					<Value></Value>
+					<PlainText>true</PlainText>
+				</Password>
+			</AutoLogon>
+			<OOBE>
+				<ProtectYourPC>3</ProtectYourPC>
+				<HideEULAPage>true</HideEULAPage>
+				<HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
+				<HideOnlineAccountScreens>false</HideOnlineAccountScreens>
+			</OOBE>
+			<FirstLogonCommands>
+				<SynchronousCommand wcm:action="add">
+					<Order>1</Order>
+					<CommandLine>powershell.exe -WindowStyle "Normal" -ExecutionPolicy "Unrestricted" -NoProfile -File "C:\Windows\Setup\Scripts\FirstLogon.ps1"</CommandLine>
+				</SynchronousCommand>
+			</FirstLogonCommands>
+		</component>
+	</settings>
+	<Extensions xmlns="https://schneegans.de/windows/unattend-generator/">
+		<ExtractScript>
+param(
+    [xml] $Document
+);
+
+foreach( $file in $Document.unattend.Extensions.File ) {
+    $path = [System.Environment]::ExpandEnvironmentVariables( $file.GetAttribute( 'path' ) );
+    mkdir -Path( $path | Split-Path -Parent ) -ErrorAction 'SilentlyContinue';
+    $encoding = switch( [System.IO.Path]::GetExtension( $path ) ) {
+        { $_ -in '.ps1', '.xml' } { [System.Text.Encoding]::UTF8; }
+        { $_ -in '.reg', '.vbs', '.js' } { [System.Text.UnicodeEncoding]::new( $false, $true ); }
+        default { [System.Text.Encoding]::Default; }
+    };
+    $bytes = $encoding.GetPreamble() + $encoding.GetBytes( $file.InnerText.Trim() );
+    [System.IO.File]::WriteAllBytes( $path, $bytes );
+}
+		</ExtractScript>
+		<File path="C:\Windows\Setup\Scripts\RemovePackages.ps1">
+$selectors = @(
+	'Microsoft.Microsoft3DViewer';
+	'Microsoft.BingSearch';
+	'Microsoft.WindowsCalculator';
+	'Microsoft.WindowsCamera';
+	'Clipchamp.Clipchamp';
+	'Microsoft.WindowsAlarms';
+	'Microsoft.Copilot';
+	'Microsoft.549981C3F5F10';
+	'Microsoft.Windows.DevHome';
+	'MicrosoftCorporationII.MicrosoftFamily';
+	'Microsoft.WindowsFeedbackHub';
+	'Microsoft.Edge.GameAssist';
+	'Microsoft.GetHelp';
+	'Microsoft.Getstarted';
+	'microsoft.windowscommunicationsapps';
+	'Microsoft.WindowsMaps';
+	'Microsoft.MixedReality.Portal';
+	'Microsoft.BingNews';
+	'Microsoft.WindowsNotepad';
+	'Microsoft.MicrosoftOfficeHub';
+	'Microsoft.Office.OneNote';
+	'Microsoft.OutlookForWindows';
+	'Microsoft.Paint';
+	'Microsoft.MSPaint';
+	'Microsoft.People';
+	'Microsoft.Windows.Photos';
+	'Microsoft.PowerAutomateDesktop';
+	'MicrosoftCorporationII.QuickAssist';
+	'Microsoft.SkypeApp';
+	'Microsoft.MicrosoftSolitaireCollection';
+	'Microsoft.MicrosoftStickyNotes';
+	'MicrosoftTeams';
+	'MSTeams';
+	'Microsoft.Todos';
+	'Microsoft.WindowsSoundRecorder';
+	'Microsoft.Wallet';
+	'Microsoft.BingWeather';
+	'Microsoft.Xbox.TCUI';
+	'Microsoft.XboxApp';
+	'Microsoft.XboxGameOverlay';
+	'Microsoft.XboxGamingOverlay';
+	'Microsoft.XboxIdentityProvider';
+	'Microsoft.XboxSpeechToTextOverlay';
+	'Microsoft.GamingApp';
+	'Microsoft.YourPhone';
+	'Microsoft.ZuneMusic';
+	'Microsoft.ZuneVideo';
+);
+$getCommand = {
+  Get-AppxProvisionedPackage -Online;
+};
+$filterCommand = {
+  $_.DisplayName -eq $selector;
+};
+$removeCommand = {
+  [CmdletBinding()]
+  param(
+    [Parameter( Mandatory, ValueFromPipeline )]
+    $InputObject
+  );
+  process {
+    $InputObject | Remove-AppxProvisionedPackage -AllUsers -Online -ErrorAction 'Continue';
+  }
+};
+$type = 'Package';
+$logfile = 'C:\Windows\Setup\Scripts\RemovePackages.log';
+&amp; {
+	$installed = &amp; $getCommand;
+	foreach( $selector in $selectors ) {
+		$result = [ordered] @{
+			Selector = $selector;
+		};
+		$found = $installed | Where-Object -FilterScript $filterCommand;
+		if( $found ) {
+			$result.Output = $found | &amp; $removeCommand;
+			if( $? ) {
+				$result.Message = "$type removed.";
+			} else {
+				$result.Message = "$type not removed.";
+				$result.Error = $Error[0];
+			}
+		} else {
+			$result.Message = "$type not installed.";
+		}
+		$result | ConvertTo-Json -Depth 3 -Compress;
+	}
+} *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; $logfile;
+		</File>
+		<File path="C:\Windows\Setup\Scripts\RemoveCapabilities.ps1">
+$selectors = @(
+	'Print.Fax.Scan';
+	'Language.Handwriting';
+	'Browser.InternetExplorer';
+	'MathRecognizer';
+	'OneCoreUAP.OneSync';
+	'Microsoft.Windows.MSPaint';
+	'App.Support.QuickAssist';
+	'Language.Speech';
+	'Language.TextToSpeech';
+	'App.StepsRecorder';
+	'Hello.Face.18967';
+	'Hello.Face.Migration.18967';
+	'Hello.Face.20134';
+	'Media.WindowsMediaPlayer';
+	'Microsoft.Windows.WordPad';
+);
+$getCommand = {
+  Get-WindowsCapability -Online | Where-Object -Property 'State' -NotIn -Value @(
+    'NotPresent';
+    'Removed';
+  );
+};
+$filterCommand = {
+  ($_.Name -split '~')[0] -eq $selector;
+};
+$removeCommand = {
+  [CmdletBinding()]
+  param(
+    [Parameter( Mandatory, ValueFromPipeline )]
+    $InputObject
+  );
+  process {
+    $InputObject | Remove-WindowsCapability -Online -ErrorAction 'Continue';
+  }
+};
+$type = 'Capability';
+$logfile = 'C:\Windows\Setup\Scripts\RemoveCapabilities.log';
+&amp; {
+	$installed = &amp; $getCommand;
+	foreach( $selector in $selectors ) {
+		$result = [ordered] @{
+			Selector = $selector;
+		};
+		$found = $installed | Where-Object -FilterScript $filterCommand;
+		if( $found ) {
+			$result.Output = $found | &amp; $removeCommand;
+			if( $? ) {
+				$result.Message = "$type removed.";
+			} else {
+				$result.Message = "$type not removed.";
+				$result.Error = $Error[0];
+			}
+		} else {
+			$result.Message = "$type not installed.";
+		}
+		$result | ConvertTo-Json -Depth 3 -Compress;
+	}
+} *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; $logfile;
+		</File>
+		<File path="C:\Windows\Setup\Scripts\RemoveFeatures.ps1">
+$selectors = @(
+	'MediaPlayback';
+	'MicrosoftWindowsPowerShellV2Root';
+	'Microsoft-RemoteDesktopConnection';
+	'Recall';
+);
+$getCommand = {
+  Get-WindowsOptionalFeature -Online | Where-Object -Property 'State' -NotIn -Value @(
+    'Disabled';
+    'DisabledWithPayloadRemoved';
+  );
+};
+$filterCommand = {
+  $_.FeatureName -eq $selector;
+};
+$removeCommand = {
+  [CmdletBinding()]
+  param(
+    [Parameter( Mandatory, ValueFromPipeline )]
+    $InputObject
+  );
+  process {
+    $InputObject | Disable-WindowsOptionalFeature -Online -Remove -NoRestart -ErrorAction 'Continue';
+  }
+};
+$type = 'Feature';
+$logfile = 'C:\Windows\Setup\Scripts\RemoveFeatures.log';
+&amp; {
+	$installed = &amp; $getCommand;
+	foreach( $selector in $selectors ) {
+		$result = [ordered] @{
+			Selector = $selector;
+		};
+		$found = $installed | Where-Object -FilterScript $filterCommand;
+		if( $found ) {
+			$result.Output = $found | &amp; $removeCommand;
+			if( $? ) {
+				$result.Message = "$type removed.";
+			} else {
+				$result.Message = "$type not removed.";
+				$result.Error = $Error[0];
+			}
+		} else {
+			$result.Message = "$type not installed.";
+		}
+		$result | ConvertTo-Json -Depth 3 -Compress;
+	}
+} *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; $logfile;
+		</File>
+		<File path="C:\Windows\Setup\Scripts\ParallelsTools.ps1">
+&amp; {
+	foreach( $letter in 'DEFGHIJKLMNOPQRSTUVWXYZ'.ToCharArray() ) {
+		$exe = "${letter}:\PTAgent.exe";
+		if( Test-Path -LiteralPath $exe ) {
+      # https://kb.parallels.com/116161/
+      # Install without any UI, don't reboot after install, and block (process doesn't exit) until installation is complete.
+      #
+      # Networking will work after this, but some other features such as touch
+      # id pass through and shared clipboard support won't work until reboot
+			Start-Process -FilePath $exe -ArgumentList '/install_silent' -Wait;
+			return;
+		}
+	}
+	'Parallels Tools image (prl-tools-win-*.iso) is not attached to this VM.';
+} *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; 'C:\Windows\Setup\Scripts\ParallelsTools.log';
+		</File>
+		<File path="C:\Windows\Setup\Scripts\MakeEdgeUninstallable.ps1">
+$ErrorActionPreference = 'Stop';
+&amp; {
+	try {
+		$params = @{
+			LiteralPath = 'C:\Windows\System32\IntegratedServicesRegionPolicySet.json';
+			Encoding = 'Utf8';
+		};
+		$o = Get-Content @params | ConvertFrom-Json;
+		$o.policies | ForEach-Object -Process {
+			if( $_.guid -eq '{1bca278a-5d11-4acf-ad2f-f9ab6d7f93a6}' ) {
+				$_.defaultState = 'enabled';
+			}
+		};
+		$o | ConvertTo-Json -Depth 9 | Out-File @params;
+	} catch {
+		$_;
+	}
+} *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; 'C:\Windows\Setup\Scripts\MakeEdgeUninstallable.log';
+		</File>
+		<File path="C:\Windows\Setup\Scripts\SetStartPins.ps1">
+$json = '{"pinnedList":[]}';
+if( [System.Environment]::OSVersion.Version.Build -lt 20000 ) {
+	return;
+}
+$key = 'Registry::HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\Start';
+New-Item -Path $key -ItemType 'Directory' -ErrorAction 'SilentlyContinue';
+Set-ItemProperty -LiteralPath $key -Name 'ConfigureStartPins' -Value $json -Type 'String';
+		</File>
+		<File path="C:\Windows\Setup\Scripts\SetColorTheme.ps1">
+$lightThemeSystem = 0;
+$lightThemeApps = 0;
+$accentColorOnStart = 1;
+$enableTransparency = 1;
+$htmlAccentColor = '#940000';
+&amp; {
+	$params = @{
+		LiteralPath = 'Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize';
+		Force = $true;
+		Type = 'DWord';
+	};
+	Set-ItemProperty @params -Name 'SystemUsesLightTheme' -Value $lightThemeSystem;
+	Set-ItemProperty @params -Name 'AppsUseLightTheme' -Value $lightThemeApps;
+	Set-ItemProperty @params -Name 'ColorPrevalence' -Value $accentColorOnStart;
+	Set-ItemProperty @params -Name 'EnableTransparency' -Value $enableTransparency;
+};
+&amp; {
+	Add-Type -AssemblyName 'System.Drawing';
+	$accentColor = [System.Drawing.ColorTranslator]::FromHtml( $htmlAccentColor );
+
+	function ConvertTo-DWord {
+		param(
+			[System.Drawing.Color]
+			$Color
+		);
+						
+		[byte[]] $bytes = @(
+			$Color.R;
+			$Color.G;
+			$Color.B;
+			$Color.A;
+		);
+		return [System.BitConverter]::ToUInt32( $bytes, 0); 
+	}
+
+	$startColor = [System.Drawing.Color]::FromArgb( 0xD2, $accentColor );
+	Set-ItemProperty -LiteralPath 'Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent' -Name 'StartColorMenu' -Value( ConvertTo-DWord -Color $accentColor ) -Type 'DWord' -Force;
+	Set-ItemProperty -LiteralPath 'Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent' -Name 'AccentColorMenu' -Value( ConvertTo-DWord -Color $accentColor ) -Type 'DWord' -Force;
+	Set-ItemProperty -LiteralPath 'Registry::HKCU\Software\Microsoft\Windows\DWM' -Name 'AccentColor' -Value( ConvertTo-DWord -Color $accentColor ) -Type 'DWord' -Force;
+	$params = @{
+		LiteralPath = 'Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent';
+		Name = 'AccentPalette';
+	};
+	$palette = Get-ItemPropertyValue @params;
+	$index = 20;
+	$palette[ $index++ ] = $accentColor.R;
+	$palette[ $index++ ] = $accentColor.G;
+	$palette[ $index++ ] = $accentColor.B;
+	$palette[ $index++ ] = $accentColor.A;
+	Set-ItemProperty @params -Value $palette -Type 'Binary' -Force;
+};
+		</File>
+		<File path="C:\Windows\Setup\Scripts\Wdac.ps1">
+Set-StrictMode -Version 'Latest';
+$ErrorActionPreference = 'Stop';
+$(
+  try {
+    $guid = '{d26bff32-33a2-48a3-b037-10357ee48427}';
+    $xml = "C:\Windows\System32\CodeIntegrity\CiPolicies\Active\${guid}.xml";
+    $binary = "C:\Windows\System32\CodeIntegrity\CiPolicies\Active\${guid}.cip";
+    Copy-Item -LiteralPath 'C:\Windows\schemas\CodeIntegrity\ExamplePolicies\DefaultWindows_Enforced.xml' -Destination $xml;
+    Set-RuleOption -FilePath $xml -Option 0;
+    Set-RuleOption -FilePath $xml -Option 6;
+    Set-RuleOption -FilePath $xml -Option 9;
+    Set-RuleOption -FilePath $xml -Option 16;
+    Set-RuleOption -FilePath $xml -Option 18;
+    Set-RuleOption -FilePath $xml -Option 5 -Delete;
+    Set-RuleOption -FilePath $xml -Option 10;
+    Merge-CIPolicy -PolicyPaths $xml -OutputFilePath $xml -Rules $(
+      @(
+        New-CIPolicyRule -FilePathRule 'C:\Windows\*';
+        New-CIPolicyRule -FilePathRule 'C:\Program Files\*';
+        New-CIPolicyRule -FilePathRule 'C:\Program Files (x86)\*';
+        New-CIPolicyRule -FilePathRule '%WINDIR%\debug\WIA\*' -Deny;
+        New-CIPolicyRule -FilePathRule '%WINDIR%\PLA\Reports\*' -Deny;
+        New-CIPolicyRule -FilePathRule '%WINDIR%\PLA\Rules\*' -Deny;
+        New-CIPolicyRule -FilePathRule '%WINDIR%\PLA\Templates\*' -Deny;
+        New-CIPolicyRule -FilePathRule '%WINDIR%\Registration\CRMLog\*' -Deny;
+        New-CIPolicyRule -FilePathRule '%WINDIR%\System32\Com\dmp\*' -Deny;
+        New-CIPolicyRule -FilePathRule '%WINDIR%\System32\FxsTmp\*' -Deny;
+        New-CIPolicyRule -FilePathRule '%WINDIR%\System32\LogFiles\WMI\*' -Deny;
+        New-CIPolicyRule -FilePathRule '%WINDIR%\System32\Microsoft\Crypto\RSA\MachineKeys\*' -Deny;
+        New-CIPolicyRule -FilePathRule '%WINDIR%\System32\spool\drivers\color\*' -Deny;
+        New-CIPolicyRule -FilePathRule '%WINDIR%\System32\spool\PRINTERS\*' -Deny;
+        New-CIPolicyRule -FilePathRule '%WINDIR%\System32\spool\SERVERS\*' -Deny;
+        New-CIPolicyRule -FilePathRule '%WINDIR%\System32\Tasks_Migrated\*' -Deny;
+        New-CIPolicyRule -FilePathRule '%WINDIR%\System32\Tasks\*' -Deny;
+        New-CIPolicyRule -FilePathRule '%WINDIR%\SysWOW64\Com\dmp\*' -Deny;
+        New-CIPolicyRule -FilePathRule '%WINDIR%\SysWOW64\FxsTmp\*' -Deny;
+        New-CIPolicyRule -FilePathRule '%WINDIR%\SysWOW64\Tasks\*' -Deny;
+        New-CIPolicyRule -FilePathRule '%WINDIR%\Tasks\*' -Deny;
+        New-CIPolicyRule -FilePathRule '%WINDIR%\Temp\*' -Deny;
+        New-CIPolicyRule -FilePathRule '%WINDIR%\tracing\*' -Deny;
+      ) | ForEach-Object -Process {
+        $_;
+      };
+    );
+    $doc = [xml]::new();
+    $doc.Load( $xml );
+    $nsmgr = [System.Xml.XmlNamespaceManager]::new( $doc.NameTable );
+    $nsmgr.AddNamespace( 'pol', 'urn:schemas-microsoft-com:sipolicy' );
+    $doc.SelectSingleNode( '/pol:SiPolicy/pol:PolicyID', $nsmgr ).InnerText = $guid;
+    $doc.SelectSingleNode( '/pol:SiPolicy/pol:BasePolicyID', $nsmgr ).InnerText = $guid;
+    $node = $doc.SelectSingleNode( '//pol:SigningScenario[@Value="12"]/pol:ProductSigners/pol:AllowedSigners', $nsmgr );
+    $node.ParentNode.RemoveChild( $node );
+    $doc.Save( $xml );
+    ConvertFrom-CIPolicy -XmlFilePath $xml -BinaryFilePath $binary;
+  } catch {
+    $_;
+  }
+) *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; 'C:\Windows\Setup\Scripts\Wdac.log';
+		</File>
+		<File path="C:\Windows\Setup\Scripts\unattend-01.ps1">
+#Requires -RunAsAdministrator
+# ============================================================================
+# GRESIV.INFO - Script First Start Windows 11
+# Script de configuration initiale avec menu interactif
+# ============================================================================
+
+# Configuration de l'encodage pour les caract&#xE8;res sp&#xE9;ciaux
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$Host.UI.RawUI.WindowTitle = "GRESIV.INFO - First Start Windows 11"
+
+# ============================================================================
+# VARIABLES GLOBALES
+# ============================================================================
+$script:Lang = "FR"
+
+$Texts = @{
+    FR = @{
+        Title = "GRESIV.INFO - Configuration Initiale Windows 11"
+        SelectLang = "Choisissez votre langue / Select your language"
+        French = "Francais"
+        English = "Anglais"
+        MainMenu = "MENU PRINCIPAL"
+        Option1 = "Installer Google Chrome (silencieux)"
+        Option2 = "Installer applications via Ninite"
+        Option3 = "Installer Microsoft Office"
+        Option4 = "Installer TOUT (Chrome + Ninite + Office)"
+        Option5 = "Changer de langue"
+        Option0 = "Quitter"
+        Choice = "Votre choix"
+        InvalidChoice = "Choix invalide. Veuillez reessayer."
+        PressKey = "Appuyez sur une touche pour continuer..."
+        Installing = "Installation en cours"
+        Success = "Installation terminee avec succes !"
+        Error = "Erreur lors de l'installation"
+        Downloading = "Telechargement en cours"
+        NiniteMenu = "MENU NINITE - Selectionnez vos applications"
+        NiniteInstructions = "Entrez les numeros separes par des virgules (ex: 1,3,5) ou 'all' pour tout"
+        NiniteConfirm = "Applications selectionnees"
+        OpeningNinite = "Ouverture de Ninite dans votre navigateur..."
+        NiniteUrl = "URL Ninite generee"
+        Goodbye = "Au revoir ! Merci d'utiliser GRESIV.INFO"
+        AdminRequired = "Ce script necessite les droits administrateur."
+        RunAsAdmin = "Veuillez relancer en tant qu'administrateur."
+    }
+    EN = @{
+        Title = "GRESIV.INFO - Windows 11 Initial Setup"
+        SelectLang = "Select your language / Choisissez votre langue"
+        French = "French"
+        English = "English"
+        MainMenu = "MAIN MENU"
+        Option1 = "Install Google Chrome (silent)"
+        Option2 = "Install applications via Ninite"
+        Option3 = "Install Microsoft Office"
+        Option4 = "Install ALL (Chrome + Ninite + Office)"
+        Option5 = "Change language"
+        Option0 = "Exit"
+        Choice = "Your choice"
+        InvalidChoice = "Invalid choice. Please try again."
+        PressKey = "Press any key to continue..."
+        Installing = "Installing"
+        Success = "Installation completed successfully!"
+        Error = "Error during installation"
+        Downloading = "Downloading"
+        NiniteMenu = "NINITE MENU - Select your applications"
+        NiniteInstructions = "Enter numbers separated by commas (e.g.: 1,3,5) or 'all' for everything"
+        NiniteConfirm = "Selected applications"
+        OpeningNinite = "Opening Ninite in your browser..."
+        NiniteUrl = "Generated Ninite URL"
+        Goodbye = "Goodbye! Thank you for using GRESIV.INFO"
+        AdminRequired = "This script requires administrator privileges."
+        RunAsAdmin = "Please run as administrator."
+    }
+}
+
+# Liste des applications Ninite disponibles
+$NiniteApps = @{
+    1  = @{ Name = "7-Zip"; Code = "7zip" }
+    2  = @{ Name = "VLC"; Code = "vlc" }
+    3  = @{ Name = "Firefox"; Code = "firefox" }
+    4  = @{ Name = "Zoom"; Code = "zoom" }
+    5  = @{ Name = "TeamViewer"; Code = "teamviewer15" }
+    6  = @{ Name = "Adobe Reader"; Code = "reader" }
+    7  = @{ Name = "LibreOffice"; Code = "libreoffice" }
+    8  = @{ Name = "Notepad++"; Code = "notepadplusplus" }
+    9  = @{ Name = "WinRAR"; Code = "winrar" }
+    10 = @{ Name = "Spotify"; Code = "spotify" }
+    11 = @{ Name = "Discord"; Code = "discord" }
+    12 = @{ Name = "Steam"; Code = "steam" }
+    13 = @{ Name = "Java Runtime"; Code = "java8" }
+    14 = @{ Name = ".NET Runtime"; Code = "dotnet48" }
+    15 = @{ Name = "Malwarebytes"; Code = "malwarebytes" }
+}
+
+# ============================================================================
+# FONCTIONS UTILITAIRES
+# ============================================================================
+
+function Get-Text {
+    param([string]$Key)
+    return $Texts[$script:Lang][$Key]
+}
+
+function Show-Header {
+    Clear-Host
+    $title = Get-Text "Title"
+    $border = "=" * 70
+    
+    Write-Host ""
+    Write-Host $border -ForegroundColor Cyan
+    Write-Host ""
+    Write-Host "   $title" -ForegroundColor White
+    Write-Host ""
+    Write-Host "   GRESIV.INFO - Nord Drome / Sud Isere" -ForegroundColor Gray
+    Write-Host ""
+    Write-Host $border -ForegroundColor Cyan
+    Write-Host ""
+}
+
+function Show-Message {
+    param(
+        [string]$Message,
+        [string]$Type = "Info"
+    )
+    
+    switch ($Type) {
+        "Success" { Write-Host "  [OK] $Message" -ForegroundColor Green }
+        "Error"   { Write-Host "  [X] $Message" -ForegroundColor Red }
+        "Warning" { Write-Host "  [!] $Message" -ForegroundColor Yellow }
+        "Info"    { Write-Host "  [i] $Message" -ForegroundColor Cyan }
+        default   { Write-Host "  $Message" }
+    }
+}
+
+function Wait-KeyPress {
+    Write-Host ""
+    Write-Host "  $(Get-Text 'PressKey')" -ForegroundColor DarkGray
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+}
+
+# ============================================================================
+# MENU SELECTION DE LANGUE
+# ============================================================================
+
+function Show-LanguageMenu {
+    Show-Header
+    
+    Write-Host "  $(Get-Text 'SelectLang')" -ForegroundColor Yellow
+    Write-Host ""
+    Write-Host "  [1] Francais / French" -ForegroundColor White
+    Write-Host "  [2] English / Anglais" -ForegroundColor White
+    Write-Host ""
+    
+    $choice = Read-Host "  &gt; "
+    
+    switch ($choice) {
+        "1" { $script:Lang = "FR" }
+        "2" { $script:Lang = "EN" }
+        default { $script:Lang = "FR" }
+    }
+}
+
+# ============================================================================
+# INSTALLATION CHROME
+# ============================================================================
+
+function Install-Chrome {
+    Show-Header
+    Show-Message "$(Get-Text 'Downloading') Google Chrome..." "Info"
+    
+    $chromeInstaller = "$env:TEMP\ChromeSetup.exe"
+    $chromeUrl = "https://dl.google.com/chrome/install/GoogleChromeStandaloneEnterprise64.msi"
+    $chromeMsi = "$env:TEMP\GoogleChrome.msi"
+    
+    try {
+        # T&#xE9;l&#xE9;chargement du MSI Enterprise (meilleur pour installation silencieuse)
+        Show-Message "$(Get-Text 'Downloading')..." "Info"
+        Invoke-WebRequest -Uri $chromeUrl -OutFile $chromeMsi -UseBasicParsing
+        
+        # Installation silencieuse
+        Show-Message "$(Get-Text 'Installing') Google Chrome..." "Info"
+        $process = Start-Process -FilePath "msiexec.exe" -ArgumentList "/i `"$chromeMsi`" /qn /norestart" -Wait -PassThru
+        
+        if ($process.ExitCode -eq 0) {
+            Show-Message "Google Chrome - $(Get-Text 'Success')" "Success"
+        } else {
+            Show-Message "Google Chrome - $(Get-Text 'Error') (Code: $($process.ExitCode))" "Error"
+        }
+        
+        # Nettoyage
+        Remove-Item $chromeMsi -Force -ErrorAction SilentlyContinue
+    }
+    catch {
+        Show-Message "Google Chrome - $(Get-Text 'Error'): $_" "Error"
+    }
+    
+    Wait-KeyPress
+}
+
+# ============================================================================
+# MENU NINITE
+# ============================================================================
+
+function Show-NiniteMenu {
+    Show-Header
+    Write-Host "  $(Get-Text 'NiniteMenu')" -ForegroundColor Yellow
+    Write-Host ""
+    
+    # Affichage des applications en colonnes
+    $apps = $NiniteApps.GetEnumerator() | Sort-Object Key
+    $column = 0
+    
+    foreach ($app in $apps) {
+        $text = "  [{0,2}] {1,-20}" -f $app.Key, $app.Value.Name
+        Write-Host $text -NoNewline -ForegroundColor White
+        $column++
+        if ($column -eq 3) {
+            Write-Host ""
+            $column = 0
+        }
+    }
+    
+    if ($column -ne 0) { Write-Host "" }
+    
+    Write-Host ""
+    Write-Host "  $(Get-Text 'NiniteInstructions')" -ForegroundColor Gray
+    Write-Host ""
+    
+    $selection = Read-Host "  &gt; "
+    
+    if ([string]::IsNullOrWhiteSpace($selection)) {
+        return
+    }
+    
+    $selectedCodes = @()
+    
+    if ($selection.ToLower() -eq "all") {
+        $selectedCodes = $NiniteApps.Values | ForEach-Object { $_.Code }
+    } else {
+        $numbers = $selection -split "," | ForEach-Object { $_.Trim() }
+        foreach ($num in $numbers) {
+            if ($NiniteApps.ContainsKey([int]$num)) {
+                $selectedCodes += $NiniteApps[[int]$num].Code
+            }
+        }
+    }
+    
+    if ($selectedCodes.Count -gt 0) {
+        $niniteUrl = "https://ninite.com/" + ($selectedCodes -join "-") + "/ninite.exe"
+        
+        Write-Host ""
+        Show-Message "$(Get-Text 'NiniteUrl'): $niniteUrl" "Info"
+        Show-Message "$(Get-Text 'OpeningNinite')" "Info"
+        
+        # T&#xE9;l&#xE9;chargement et ex&#xE9;cution du Ninite
+        $niniteExe = "$env:TEMP\Ninite.exe"
+        
+        try {
+            Invoke-WebRequest -Uri $niniteUrl -OutFile $niniteExe -UseBasicParsing
+            Show-Message "$(Get-Text 'Installing')..." "Info"
+            Start-Process -FilePath $niniteExe -Wait
+            Show-Message "Ninite - $(Get-Text 'Success')" "Success"
+            Remove-Item $niniteExe -Force -ErrorAction SilentlyContinue
+        }
+        catch {
+            # Si le t&#xE9;l&#xE9;chargement &#xE9;choue, ouvrir dans le navigateur
+            Start-Process $niniteUrl
+            Show-Message "$(Get-Text 'OpeningNinite')" "Info"
+        }
+    }
+    
+    Wait-KeyPress
+}
+
+# ============================================================================
+# INSTALLATION OFFICE
+# ============================================================================
+
+function Install-Office {
+    Show-Header
+    Show-Message "$(Get-Text 'Installing') Microsoft Office..." "Info"
+    
+    try {
+        # Ex&#xE9;cution de la commande IRM pour Office
+        Show-Message "$(Get-Text 'Downloading')..." "Info"
+        
+        # Cr&#xE9;er un script temporaire pour ex&#xE9;cuter la commande
+        $officeScript = @"
+irm https://office-unnatended.vercel.app/ | iex
+"@
+        
+        # Ex&#xE9;cution dans une nouvelle fen&#xEA;tre PowerShell
+        Start-Process powershell.exe -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command `"$officeScript`"" -Wait
+        
+        Show-Message "Microsoft Office - $(Get-Text 'Success')" "Success"
+    }
+    catch {
+        Show-Message "Microsoft Office - $(Get-Text 'Error'): $_" "Error"
+    }
+    
+    Wait-KeyPress
+}
+
+# ============================================================================
+# INSTALLATION COMPLETE
+# ============================================================================
+
+function Install-All {
+    Show-Header
+    Write-Host "  Installation complete en cours..." -ForegroundColor Yellow
+    Write-Host ""
+    
+    # Chrome
+    Show-Message "1/3 - Google Chrome" "Info"
+    Install-ChromeSilent
+    
+    # Ninite avec apps par d&#xE9;faut
+    Show-Message "2/3 - Applications Ninite (7-Zip, VLC, Adobe Reader)" "Info"
+    Install-NiniteDefault
+    
+    # Office
+    Show-Message "3/3 - Microsoft Office" "Info"
+    Install-OfficeSilent
+    
+    Write-Host ""
+    Show-Message "$(Get-Text 'Success')" "Success"
+    Wait-KeyPress
+}
+
+function Install-ChromeSilent {
+    $chromeMsi = "$env:TEMP\GoogleChrome.msi"
+    $chromeUrl = "https://dl.google.com/chrome/install/GoogleChromeStandaloneEnterprise64.msi"
+    
+    try {
+        Invoke-WebRequest -Uri $chromeUrl -OutFile $chromeMsi -UseBasicParsing
+        Start-Process -FilePath "msiexec.exe" -ArgumentList "/i `"$chromeMsi`" /qn /norestart" -Wait
+        Remove-Item $chromeMsi -Force -ErrorAction SilentlyContinue
+        Show-Message "Chrome OK" "Success"
+    }
+    catch {
+        Show-Message "Chrome - $(Get-Text 'Error')" "Error"
+    }
+}
+
+function Install-NiniteDefault {
+    $defaultApps = @("7zip", "vlc", "reader")
+    $niniteUrl = "https://ninite.com/" + ($defaultApps -join "-") + "/ninite.exe"
+    $niniteExe = "$env:TEMP\Ninite.exe"
+    
+    try {
+        Invoke-WebRequest -Uri $niniteUrl -OutFile $niniteExe -UseBasicParsing
+        Start-Process -FilePath $niniteExe -Wait
+        Remove-Item $niniteExe -Force -ErrorAction SilentlyContinue
+        Show-Message "Ninite OK" "Success"
+    }
+    catch {
+        Show-Message "Ninite - $(Get-Text 'Error')" "Error"
+    }
+}
+
+function Install-OfficeSilent {
+    try {
+        $officeScript = "irm https://office-unnatended.vercel.app/ | iex"
+        Start-Process powershell.exe -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command `"$officeScript`"" -Wait
+        Show-Message "Office OK" "Success"
+    }
+    catch {
+        Show-Message "Office - $(Get-Text 'Error')" "Error"
+    }
+}
+
+# ============================================================================
+# MENU PRINCIPAL
+# ============================================================================
+
+function Show-MainMenu {
+    while ($true) {
+        Show-Header
+        
+        Write-Host "  $(Get-Text 'MainMenu')" -ForegroundColor Yellow
+        Write-Host ""
+        Write-Host "  [1] $(Get-Text 'Option1')" -ForegroundColor White
+        Write-Host "  [2] $(Get-Text 'Option2')" -ForegroundColor White
+        Write-Host "  [3] $(Get-Text 'Option3')" -ForegroundColor White
+        Write-Host ""
+        Write-Host "  [4] $(Get-Text 'Option4')" -ForegroundColor Green
+        Write-Host ""
+        Write-Host "  [5] $(Get-Text 'Option5')" -ForegroundColor Gray
+        Write-Host "  [0] $(Get-Text 'Option0')" -ForegroundColor Gray
+        Write-Host ""
+        
+        $choice = Read-Host "  $(Get-Text 'Choice')"
+        
+        switch ($choice) {
+            "1" { Install-Chrome }
+            "2" { Show-NiniteMenu }
+            "3" { Install-Office }
+            "4" { Install-All }
+            "5" { Show-LanguageMenu }
+            "0" { 
+                Show-Header
+                Show-Message "$(Get-Text 'Goodbye')" "Info"
+                Write-Host ""
+                exit 
+            }
+            default {
+                Show-Message "$(Get-Text 'InvalidChoice')" "Warning"
+                Start-Sleep -Seconds 1
+            }
+        }
+    }
+}
+
+# ============================================================================
+# POINT D'ENTREE
+# ============================================================================
+
+# V&#xE9;rification des droits admin
+$isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+
+if (-not $isAdmin) {
+    Write-Host ""
+    Write-Host "  [!] Ce script necessite les droits administrateur." -ForegroundColor Red
+    Write-Host "  [!] This script requires administrator privileges." -ForegroundColor Red
+    Write-Host ""
+    Write-Host "  Relancement en tant qu'administrateur..." -ForegroundColor Yellow
+    Write-Host "  Relaunching as administrator..." -ForegroundColor Yellow
+    Write-Host ""
+    
+    # Relancer en admin
+    Start-Process powershell.exe -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
+    exit
+}
+
+# Lancement
+Show-LanguageMenu
+Show-MainMenu
+		</File>
+		<File path="C:\Windows\Setup\Scripts\Specialize.ps1">
+$scripts = @(
+	{
+		reg.exe add "HKLM\SYSTEM\Setup\MoSetup" /v AllowUpgradesWithUnsupportedTPMOrCPU /t REG_DWORD /d 1 /f;
+	};
+	{
+		reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE" /v BypassNRO /t REG_DWORD /d 1 /f;
+	};
+	{
+		ReAgentc.exe /disable;
+		Remove-Item -LiteralPath 'C:\Windows\System32\Recovery\Winre.wim' -Force -ErrorAction 'SilentlyContinue';
+	};
+	{
+		Remove-Item -LiteralPath 'Registry::HKLM\Software\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe\DevHomeUpdate' -Force -ErrorAction 'SilentlyContinue';
+	};
+	{
+		reg.exe add "HKCR\.txt\ShellNew" /v ItemName /t REG_EXPAND_SZ /d "@C:\Windows\system32\notepad.exe,-470" /f;
+		reg.exe add "HKCR\.txt\ShellNew" /v NullFile /t REG_SZ /f;
+		reg.exe add "HKCR\txtfilelegacy" /v FriendlyTypeName /t REG_EXPAND_SZ /d "@C:\Windows\system32\notepad.exe,-469" /f;
+		reg.exe add "HKCR\txtfilelegacy" /ve /t REG_SZ /d "Text Document" /f;
+	};
+	{
+		Remove-Item -LiteralPath 'C:\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\OneDrive.lnk', 'C:\Windows\System32\OneDriveSetup.exe', 'C:\Windows\SysWOW64\OneDriveSetup.exe' -ErrorAction 'Continue';
+	};
+	{
+		Remove-Item -LiteralPath 'Registry::HKLM\Software\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe\OutlookUpdate' -Force -ErrorAction 'SilentlyContinue';
+	};
+	{
+		reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Communications" /v ConfigureChatAutoInstall /t REG_DWORD /d 0 /f;
+	};
+	{
+		&amp; 'C:\Windows\Setup\Scripts\RemovePackages.ps1';
+	};
+	{
+		&amp; 'C:\Windows\Setup\Scripts\RemoveCapabilities.ps1';
+	};
+	{
+		&amp; 'C:\Windows\Setup\Scripts\RemoveFeatures.ps1';
+	};
+	{
+		net.exe accounts /maxpwage:UNLIMITED;
+	};
+	{
+		reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Notifications" /v DisableNotifications /t REG_DWORD /d 1 /f;
+	};
+	{
+		reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f
+	};
+	{
+		Remove-Item -LiteralPath 'C:\Users\Public\Desktop\Microsoft Edge.lnk' -ErrorAction 'SilentlyContinue' -Verbose;
+	};
+	{
+		reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Dsh" /v AllowNewsAndInterests /t REG_DWORD /d 0 /f;
+	};
+	{
+		reg.exe add "HKLM\Software\Policies\Microsoft\Windows\CloudContent" /v "DisableWindowsConsumerFeatures" /t REG_DWORD /d 1 /f;
+	};
+	{
+		&amp; 'C:\Windows\Setup\Scripts\ParallelsTools.ps1';
+	};
+	{
+		reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\BitLocker" /v "PreventDeviceEncryption" /t REG_DWORD /d 1 /f;
+	};
+	{
+		reg.exe add "HKLM\Software\Policies\Microsoft\Edge" /v HideFirstRunExperience /t REG_DWORD /d 1 /f;
+	};
+	{
+		reg.exe add "HKLM\Software\Policies\Microsoft\Edge\Recommended" /v BackgroundModeEnabled /t REG_DWORD /d 0 /f;
+		reg.exe add "HKLM\Software\Policies\Microsoft\Edge\Recommended" /v StartupBoostEnabled /t REG_DWORD /d 0 /f;
+	};
+	{
+		&amp; 'C:\Windows\Setup\Scripts\MakeEdgeUninstallable.ps1';
+	};
+	{
+		&amp; 'C:\Windows\Setup\Scripts\SetStartPins.ps1';
+	};
+	{
+		Set-ItemProperty -LiteralPath "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ControlAnimations" -Name 'DefaultValue' -Value 0 -Type 'DWord' -Force;
+		Set-ItemProperty -LiteralPath "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\AnimateMinMax" -Name 'DefaultValue' -Value 0 -Type 'DWord' -Force;
+		Set-ItemProperty -LiteralPath "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TaskbarAnimations" -Name 'DefaultValue' -Value 0 -Type 'DWord' -Force;
+		Set-ItemProperty -LiteralPath "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DWMAeroPeekEnabled" -Name 'DefaultValue' -Value 0 -Type 'DWord' -Force;
+		Set-ItemProperty -LiteralPath "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\MenuAnimation" -Name 'DefaultValue' -Value 0 -Type 'DWord' -Force;
+		Set-ItemProperty -LiteralPath "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TooltipAnimation" -Name 'DefaultValue' -Value 0 -Type 'DWord' -Force;
+		Set-ItemProperty -LiteralPath "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\SelectionFade" -Name 'DefaultValue' -Value 0 -Type 'DWord' -Force;
+		Set-ItemProperty -LiteralPath "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DWMSaveThumbnailEnabled" -Name 'DefaultValue' -Value 0 -Type 'DWord' -Force;
+		Set-ItemProperty -LiteralPath "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\CursorShadow" -Name 'DefaultValue' -Value 0 -Type 'DWord' -Force;
+		Set-ItemProperty -LiteralPath "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListviewShadow" -Name 'DefaultValue' -Value 0 -Type 'DWord' -Force;
+		Set-ItemProperty -LiteralPath "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ThumbnailsOrIcon" -Name 'DefaultValue' -Value 0 -Type 'DWord' -Force;
+		Set-ItemProperty -LiteralPath "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListviewAlphaSelect" -Name 'DefaultValue' -Value 0 -Type 'DWord' -Force;
+		Set-ItemProperty -LiteralPath "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DragFullWindows" -Name 'DefaultValue' -Value 0 -Type 'DWord' -Force;
+		Set-ItemProperty -LiteralPath "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ComboBoxAnimation" -Name 'DefaultValue' -Value 0 -Type 'DWord' -Force;
+		Set-ItemProperty -LiteralPath "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\FontSmoothing" -Name 'DefaultValue' -Value 0 -Type 'DWord' -Force;
+		Set-ItemProperty -LiteralPath "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListBoxSmoothScrolling" -Name 'DefaultValue' -Value 0 -Type 'DWord' -Force;
+		Set-ItemProperty -LiteralPath "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DropShadow" -Name 'DefaultValue' -Value 0 -Type 'DWord' -Force;
+	};
+	{
+		reg.exe add "HKU\.DEFAULT\Control Panel\Accessibility\StickyKeys" /v Flags /t REG_SZ /d 10 /f;
+	};
+	{
+		  reg.exe add "HKLM\System\CurrentControlSet\Control\DeviceGuard" /v "EnableVirtualizationBasedSecurity" /t REG_DWORD /d 0 /f;
+		  reg.exe add "HKLM\System\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity" /v "Enabled" /t REG_DWORD /d 0 /f;
+		  reg.exe add "HKLM\System\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity" /v "EnabledBootId" /t REG_DWORD /d 0 /f;
+		  reg.exe add "HKLM\System\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity" /v "WasEnabledBy" /t REG_DWORD /d 0 /f;
+	};
+	{
+		  reg.exe add "HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v "DisableAutomaticRestartSignOn" /t REG_DWORD /d 1 /f;
+	};
+	{
+		&amp; 'C:\Windows\Setup\Scripts\Wdac.ps1';
+	};
+);
+
+&amp; {
+  [float] $complete = 0;
+  [float] $increment = 100 / $scripts.Count;
+  foreach( $script in $scripts ) {
+    Write-Progress -Activity 'Running scripts to customize your Windows installation. Do not close this window.' -PercentComplete $complete;
+    '*** Will now execute command &#xAB;{0}&#xBB;.' -f $(
+      $str = $script.ToString().Trim() -replace '\s+', ' ';
+      $max = 100;
+      if( $str.Length -le $max ) {
+        $str;
+      } else {
+        $str.Substring( 0, $max - 1 ) + '&#x2026;';
+      }
+    );
+    $start = [datetime]::Now;
+    &amp; $script;
+    '*** Finished executing command after {0:0} ms.' -f [datetime]::Now.Subtract( $start ).TotalMilliseconds;
+    "`r`n" * 3;
+    $complete += $increment;
+  }
+} *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; "C:\Windows\Setup\Scripts\Specialize.log";
+		</File>
+		<File path="C:\Windows\Setup\Scripts\UserOnce.ps1">
+$scripts = @(
+	{
+		Get-AppxPackage -Name 'Microsoft.Windows.Ai.Copilot.Provider' | Remove-AppxPackage;
+	};
+	{
+		@(
+		  Get-ChildItem -LiteralPath $env:USERPROFILE -Force -Recurse -Depth 2;
+		) | Where-Object -FilterScript {
+			$_.Attributes.HasFlag( [System.IO.FileAttributes]::ReparsePoint );
+		} | Remove-Item -Force -Recurse -Verbose;
+	};
+	{
+		Remove-Item -LiteralPath "${env:USERPROFILE}\Desktop\Microsoft Edge.lnk" -ErrorAction 'SilentlyContinue' -Verbose;
+	};
+	{
+		Set-ItemProperty -LiteralPath 'Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Search' -Name 'SearchboxTaskbarMode' -Type 'DWord' -Value 1;
+	};
+	{
+		Set-ItemProperty -LiteralPath 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects' -Name 'VisualFXSetting' -Type 'DWord' -Value 2 -Force;
+	};
+	{
+		New-Item -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu' -Force;
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu' -Name '{5399e694-6ce5-4d6c-8fce-1d8870fdcba0}' -Value 1 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu' -Name '{b4bfcc3a-db2c-424c-b029-7fe99a87c641}' -Value 1 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu' -Name '{a8cdff1c-4878-43be-b5fd-f8091c1c60d0}' -Value 0 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu' -Name '{374de290-123f-4565-9164-39c4925e467b}' -Value 0 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu' -Name '{e88865ea-0e1c-4e20-9aa6-edcd0212c87c}' -Value 1 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu' -Name '{f874310e-b6b7-47dc-bc84-b9e6b38f5903}' -Value 1 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu' -Name '{1cf1260c-4dd0-4ebb-811f-33c572699fde}' -Value 1 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu' -Name '{f02c1a0d-be21-4350-88b0-7367fc96ef3c}' -Value 1 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu' -Name '{3add1653-eb32-4cb0-bbd7-dfa0abb5acca}' -Value 1 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu' -Name '{645ff040-5081-101b-9f08-00aa002f954e}' -Value 0 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu' -Name '{20d04fe0-3aea-1069-a2d8-08002b30309d}' -Value 0 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu' -Name '{59031a47-3f72-44a7-89c5-5595fe6b30ee}' -Value 1 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu' -Name '{a0953c92-50dc-43bf-be83-3742fed03c9c}' -Value 1 -Type 'DWord';
+		New-Item -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel' -Force;
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel' -Name '{5399e694-6ce5-4d6c-8fce-1d8870fdcba0}' -Value 1 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel' -Name '{b4bfcc3a-db2c-424c-b029-7fe99a87c641}' -Value 1 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel' -Name '{a8cdff1c-4878-43be-b5fd-f8091c1c60d0}' -Value 0 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel' -Name '{374de290-123f-4565-9164-39c4925e467b}' -Value 0 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel' -Name '{e88865ea-0e1c-4e20-9aa6-edcd0212c87c}' -Value 1 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel' -Name '{f874310e-b6b7-47dc-bc84-b9e6b38f5903}' -Value 1 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel' -Name '{1cf1260c-4dd0-4ebb-811f-33c572699fde}' -Value 1 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel' -Name '{f02c1a0d-be21-4350-88b0-7367fc96ef3c}' -Value 1 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel' -Name '{3add1653-eb32-4cb0-bbd7-dfa0abb5acca}' -Value 1 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel' -Name '{645ff040-5081-101b-9f08-00aa002f954e}' -Value 0 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel' -Name '{20d04fe0-3aea-1069-a2d8-08002b30309d}' -Value 0 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel' -Name '{59031a47-3f72-44a7-89c5-5595fe6b30ee}' -Value 1 -Type 'DWord';
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel' -Name '{a0953c92-50dc-43bf-be83-3742fed03c9c}' -Value 1 -Type 'DWord';
+	};
+	{
+		Set-ItemProperty -Path 'Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start' -Name 'VisiblePlaces' -Value $( [convert]::FromBase64String('vCSKFAzWiUKggG7Zu6JIgoYIc1KqUUNCn3sndlhGWdQ=') ) -Type 'Binary';
+	};
+	{
+		&amp; 'C:\Windows\Setup\Scripts\SetColorTheme.ps1';
+	};
+	{
+		Get-Process -Name 'explorer' -ErrorAction 'SilentlyContinue' | Where-Object -FilterScript {
+			$_.SessionId -eq ( Get-Process -Id $PID ).SessionId;
+		} | Stop-Process -Force;
+	};
+);
+
+&amp; {
+  [float] $complete = 0;
+  [float] $increment = 100 / $scripts.Count;
+  foreach( $script in $scripts ) {
+    Write-Progress -Activity 'Running scripts to configure this user account. Do not close this window.' -PercentComplete $complete;
+    '*** Will now execute command &#xAB;{0}&#xBB;.' -f $(
+      $str = $script.ToString().Trim() -replace '\s+', ' ';
+      $max = 100;
+      if( $str.Length -le $max ) {
+        $str;
+      } else {
+        $str.Substring( 0, $max - 1 ) + '&#x2026;';
+      }
+    );
+    $start = [datetime]::Now;
+    &amp; $script;
+    '*** Finished executing command after {0:0} ms.' -f [datetime]::Now.Subtract( $start ).TotalMilliseconds;
+    "`r`n" * 3;
+    $complete += $increment;
+  }
+} *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; "$env:TEMP\UserOnce.log";
+		</File>
+		<File path="C:\Windows\Setup\Scripts\DefaultUser.ps1">
+$scripts = @(
+	{
+		reg.exe add "HKU\DefaultUser\Software\Policies\Microsoft\Windows\WindowsCopilot" /v TurnOffWindowsCopilot /t REG_DWORD /d 1 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Internet Explorer\LowRegistry\Audio\PolicyConfig\PropertyStore" /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Notepad" /v ShowStoreBanner /t REG_DWORD /d 0 /f;
+	};
+	{
+		Remove-ItemProperty -LiteralPath 'Registry::HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Run' -Name 'OneDriveSetup' -Force -ErrorAction 'Continue';
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\GameDVR" /v AppCaptureEnabled /t REG_DWORD /d 0 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "HideFileExt" /t REG_DWORD /d 0 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "Hidden" /t REG_DWORD /d 1 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowTaskViewButton /t REG_DWORD /d 0 /f;
+	};
+	{
+		$names = @(
+		  'ContentDeliveryAllowed';
+		  'FeatureManagementEnabled';
+		  'OEMPreInstalledAppsEnabled';
+		  'PreInstalledAppsEnabled';
+		  'PreInstalledAppsEverEnabled';
+		  'SilentInstalledAppsEnabled';
+		  'SoftLandingEnabled';
+		  'SubscribedContentEnabled';
+		  'SubscribedContent-310093Enabled';
+		  'SubscribedContent-338387Enabled';
+		  'SubscribedContent-338388Enabled';
+		  'SubscribedContent-338389Enabled';
+		  'SubscribedContent-338393Enabled';
+		  'SubscribedContent-353694Enabled';
+		  'SubscribedContent-353696Enabled';
+		  'SubscribedContent-353698Enabled';
+		  'SystemPaneSuggestionsEnabled';
+		);
+		
+		foreach( $name in $names ) {
+		  reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v $name /t REG_DWORD /d 0 /f;
+		}
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Policies\Microsoft\Windows\Explorer" /v DisableSearchBoxSuggestions /t REG_DWORD /d 1 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Control Panel\Accessibility\StickyKeys" /v Flags /t REG_SZ /d 10 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\DWM" /v ColorPrevalence /t REG_DWORD /d 0 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\RunOnce" /v "UnattendedSetup" /t REG_SZ /d "powershell.exe -WindowStyle \""Normal\"" -ExecutionPolicy \""Unrestricted\"" -NoProfile -File \""C:\Windows\Setup\Scripts\UserOnce.ps1\""" /f;
+	};
+);
+
+&amp; {
+  [float] $complete = 0;
+  [float] $increment = 100 / $scripts.Count;
+  foreach( $script in $scripts ) {
+    Write-Progress -Activity 'Running scripts to modify the default user&#x2019;&#x2019;s registry hive. Do not close this window.' -PercentComplete $complete;
+    '*** Will now execute command &#xAB;{0}&#xBB;.' -f $(
+      $str = $script.ToString().Trim() -replace '\s+', ' ';
+      $max = 100;
+      if( $str.Length -le $max ) {
+        $str;
+      } else {
+        $str.Substring( 0, $max - 1 ) + '&#x2026;';
+      }
+    );
+    $start = [datetime]::Now;
+    &amp; $script;
+    '*** Finished executing command after {0:0} ms.' -f [datetime]::Now.Subtract( $start ).TotalMilliseconds;
+    "`r`n" * 3;
+    $complete += $increment;
+  }
+} *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; "C:\Windows\Setup\Scripts\DefaultUser.log";
+		</File>
+		<File path="C:\Windows\Setup\Scripts\FirstLogon.ps1">
+$scripts = @(
+	{
+		Set-ItemProperty -LiteralPath 'Registry::HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon' -Name 'AutoLogonCount' -Type 'DWord' -Force -Value 0;
+	};
+	{
+		@(
+			Get-ChildItem -LiteralPath 'C:\' -Force;
+			Get-ChildItem -LiteralPath 'C:\Users' -Force;
+			Get-ChildItem -LiteralPath 'C:\Users\Default' -Force -Recurse -Depth 2;
+			Get-ChildItem -LiteralPath 'C:\Users\Public' -Force -Recurse -Depth 2;
+			Get-ChildItem -LiteralPath 'C:\ProgramData' -Force;
+		) | Where-Object -FilterScript {
+			$_.Attributes.HasFlag( [System.IO.FileAttributes]::ReparsePoint );
+		} | Remove-Item -Force -Recurse -Verbose;
+	};
+	{
+		cmd.exe /c "rmdir C:\Windows.old";
+	};
+	{
+		&amp; 'C:\Windows\Setup\Scripts\unattend-01.ps1';
+	};
+);
+
+&amp; {
+  [float] $complete = 0;
+  [float] $increment = 100 / $scripts.Count;
+  foreach( $script in $scripts ) {
+    Write-Progress -Activity 'Running scripts to finalize your Windows installation. Do not close this window.' -PercentComplete $complete;
+    '*** Will now execute command &#xAB;{0}&#xBB;.' -f $(
+      $str = $script.ToString().Trim() -replace '\s+', ' ';
+      $max = 100;
+      if( $str.Length -le $max ) {
+        $str;
+      } else {
+        $str.Substring( 0, $max - 1 ) + '&#x2026;';
+      }
+    );
+    $start = [datetime]::Now;
+    &amp; $script;
+    '*** Finished executing command after {0:0} ms.' -f [datetime]::Now.Subtract( $start ).TotalMilliseconds;
+    "`r`n" * 3;
+    $complete += $increment;
+  }
+} *&gt;&amp;1 | Out-String -Width 1KB -Stream &gt;&gt; "C:\Windows\Setup\Scripts\FirstLogon.log";
+		</File>
+	</Extensions>
+</unattend>

@@ -180,13 +180,6 @@ Write-Step "Creating language configuration file..." "INFO"
 
 $langXmlPath = "$MountPath\Windows\Temp\lang.xml"
 
-# Ensure the Temp directory exists
-$tempDir = "$MountPath\Windows\Temp"
-if (-not (Test-Path $tempDir)) {
-    New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
-    Write-Step "Created Temp directory in mounted image" "INFO"
-}
-
 if ($Language -eq "FR") {
     $langXmlContent = @"
 <gs:GlobalizationServices xmlns:gs="urn:longhornGlobalizationUnattend">

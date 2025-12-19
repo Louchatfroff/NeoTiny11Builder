@@ -43,10 +43,5 @@
       "source": "/install",
       "destination": "/api/install.ps1"
     }
-  ],
-  "redirects": [
-    { "source": "/install", 
-      "destination": "https://raw.githubusercontent.com/Louchatfroff/NeoTiny11Builder/refs/heads/main/api/install.ps1" 
-    }
   ]
 }

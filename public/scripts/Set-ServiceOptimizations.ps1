@@ -101,6 +101,13 @@ $alwaysDisable = @(
     "XblGameSave"                  # Xbox Live Game Save
     "XboxNetApiSvc"                # Xbox Live Networking Service
     "XboxGipSvc"                   # Xbox Accessory Management Service
+    # Windows Update related services - DISABLED for gaming ISO
+    "wuauserv"                     # Windows Update
+    "UsoSvc"                       # Update Orchestrator Service
+    "WaaSMedicSvc"                 # Windows Update Medic Service
+    "BITS"                         # Background Intelligent Transfer Service
+    "DoSvc"                        # Delivery Optimization
+    "uhssvc"                       # Microsoft Update Health Service
 )
 
 # Conditional disables based on config
@@ -142,11 +149,9 @@ Write-Step "Disabled $disabledCount services" "SUCCESS"
 # ============================================================================
 
 $setToManual = @(
-    "BITS"                         # Background Intelligent Transfer (needed for updates)
     "AppXSvc"                      # AppX Deployment Service
     "ClipSVC"                      # Client License Service
     "CryptSvc"                     # Cryptographic Services
-    "DoSvc"                        # Delivery Optimization
     "FontCache"                    # Windows Font Cache Service
     "gpsvc"                        # Group Policy Client
     "InstallService"               # Microsoft Store Install Service
@@ -170,7 +175,6 @@ $setToManual = @(
     "WinHttpAutoProxySvc"          # WinHTTP Web Proxy Auto-Discovery
     "Winmgmt"                      # Windows Management Instrumentation
     "wscsvc"                       # Security Center
-    "wuauserv"                     # Windows Update
     "WlanSvc"                      # WLAN AutoConfig
     "PlugPlay"                     # Plug and Play
 )
@@ -211,7 +215,6 @@ $gamingEssential = @(
     "StorSvc"                      # Storage Service
     "SystemEventsBroker"           # System Events Broker
     "TimeBrokerSvc"                # Time Broker
-    "UsoSvc"                       # Update Orchestrator Service
     "UserManager"                  # User Manager
     "VaultSvc"                     # Credential Manager
     "Wcmsvc"                       # Windows Connection Manager

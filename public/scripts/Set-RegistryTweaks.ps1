@@ -389,6 +389,73 @@ Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Window
 
 Write-Step "Windows Update disabled" "SUCCESS"
 
+# ============================================================================
+# DISABLE RESTART NOTIFICATIONS AND RECOVERY
+# ============================================================================
+Write-Step "Disabling restart notifications..." "INFO"
+
+# Disable "Why did my PC restart" / Shutdown Event Tracker
+New-RegistryKey -Path "HKLM\OFFLINE_SOFTWARE\Policies\Microsoft\Windows NT\Reliability"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows NT\Reliability" `
+    -Name "ShutdownReasonOn" -Value "0"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows NT\Reliability" `
+    -Name "ShutdownReasonUI" -Value "0"
+New-RegistryKey -Path "HKLM\OFFLINE_SOFTWARE\Microsoft\Windows\CurrentVersion\Reliability"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Microsoft\Windows\CurrentVersion\Reliability" `
+    -Name "ShutdownReasonUI" -Value "0"
+
+# Disable Automatic Restart Sign-on (ARSO)
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Microsoft\Windows\CurrentVersion\Policies\System" `
+    -Name "DisableAutomaticRestartSignOn" -Value "1"
+
+# Disable restart required notifications
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\WindowsUpdate" `
+    -Name "SetAutoRestartNotificationDisable" -Value "1"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\WindowsUpdate\AU" `
+    -Name "NoAUShutdownOption" -Value "1"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\WindowsUpdate\AU" `
+    -Name "NoAUAsDefaultShutdownOption" -Value "1"
+
+# Disable Windows Error Reporting (can trigger restart dialogs)
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\Windows Error Reporting" `
+    -Name "Disabled" -Value "1"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\Windows Error Reporting" `
+    -Name "DontSendAdditionalData" -Value "1"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\Windows Error Reporting" `
+    -Name "LoggingDisabled" -Value "1"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\Windows Error Reporting" `
+    -Name "DontShowUI" -Value "1"
+
+# Disable Automatic Maintenance (can trigger restart prompts)
+New-RegistryKey -Path "HKLM\OFFLINE_SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Maintenance"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Microsoft\Windows NT\CurrentVersion\Schedule\Maintenance" `
+    -Name "MaintenanceDisabled" -Value "1"
+
+# Disable restart after BSOD
+Set-RegistryValue -Hive "HKLM\OFFLINE_SYSTEM" -Path "ControlSet001\Control\CrashControl" `
+    -Name "AutoReboot" -Value "0"
+
+# Disable Delivery Optimization
+New-RegistryKey -Path "HKLM\OFFLINE_SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\DeliveryOptimization" `
+    -Name "DODownloadMode" -Value "0"
+
+# Disable Update Notification Level
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\WindowsUpdate" `
+    -Name "SetUpdateNotificationLevel" -Value "1"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\WindowsUpdate" `
+    -Name "UpdateNotificationLevel" -Value "2"
+
+# Disable Reboot Notifications
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\WindowsUpdate" `
+    -Name "SetAutoRestartDeadline" -Value "0"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\WindowsUpdate" `
+    -Name "SetEngagedRestartTransitionSchedule" -Value "0"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\WindowsUpdate" `
+    -Name "SetRestartWarningSchd" -Value "0"
+
+Write-Step "Restart notifications disabled" "SUCCESS"
+
 # Unload registry hives
 Write-Step "Unloading registry hives..." "INFO"
 [gc]::Collect()

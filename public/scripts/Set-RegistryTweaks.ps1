@@ -327,6 +327,68 @@ Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Microsoft\WindowsUpdate\O
 New-RegistryKey -Path "HKLM\OFFLINE_SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Orchestrator\UScheduler\DevHomeUpdate"
 New-RegistryKey -Path "HKLM\OFFLINE_SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Orchestrator\UScheduler\OutlookUpdate"
 
+# ============================================================================
+# DISABLE WINDOWS UPDATE COMPLETELY
+# ============================================================================
+Write-Step "Disabling Windows Update..." "INFO"
+
+# Disable Windows Update via Group Policy
+New-RegistryKey -Path "HKLM\OFFLINE_SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate"
+New-RegistryKey -Path "HKLM\OFFLINE_SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU"
+
+# Disable automatic updates
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\WindowsUpdate\AU" `
+    -Name "NoAutoUpdate" -Value "1"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\WindowsUpdate\AU" `
+    -Name "AUOptions" -Value "1"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\WindowsUpdate\AU" `
+    -Name "NoAutoRebootWithLoggedOnUsers" -Value "1"
+
+# Disable Windows Update entirely
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\WindowsUpdate" `
+    -Name "DisableWindowsUpdateAccess" -Value "1"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\WindowsUpdate" `
+    -Name "DoNotConnectToWindowsUpdateInternetLocations" -Value "1"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\WindowsUpdate" `
+    -Name "SetDisableUXWUAccess" -Value "1"
+
+# Disable driver updates via Windows Update
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\WindowsUpdate" `
+    -Name "ExcludeWUDriversInQualityUpdate" -Value "1"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Microsoft\Windows\CurrentVersion\DriverSearching" `
+    -Name "SearchOrderConfig" -Value "0"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\DriverSearching" `
+    -Name "DriverUpdateWizardWuSearchEnabled" -Value "0"
+
+# Disable Update Orchestrator scheduled tasks via registry
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Microsoft\WindowsUpdate\UX\Settings" `
+    -Name "HideMCTLink" -Value "1"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Microsoft\WindowsUpdate\UX\Settings" `
+    -Name "UxOption" -Value "1"
+
+# Disable "Why did my PC restart" notification
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" `
+    -Name "AUOptions" -Value "1"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" `
+    -Name "EnableFeaturedSoftware" -Value "0"
+
+# Disable Windows Update Medic Service reactivation
+New-RegistryKey -Path "HKLM\OFFLINE_SYSTEM\ControlSet001\Services\WaaSMedicSvc"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SYSTEM" -Path "ControlSet001\Services\WaaSMedicSvc" `
+    -Name "Start" -Value "4"
+
+# Disable Update Health Tools
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\WindowsUpdate" `
+    -Name "ManagePreviewBuilds" -Value "1"
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\Windows\WindowsUpdate" `
+    -Name "ManagePreviewBuildsPolicyValue" -Value "0"
+
+# Prevent Store from auto-updating apps
+Set-RegistryValue -Hive "HKLM\OFFLINE_SOFTWARE" -Path "Policies\Microsoft\WindowsStore" `
+    -Name "AutoDownload" -Value "2"
+
+Write-Step "Windows Update disabled" "SUCCESS"
+
 # Unload registry hives
 Write-Step "Unloading registry hives..." "INFO"
 [gc]::Collect()

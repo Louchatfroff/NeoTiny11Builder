@@ -122,17 +122,6 @@ Edit `config\settings.json` to customize:
 }
 ```
 
-## Vercel Deployment
-
-This project includes Vercel configuration for web hosting:
-
-1. Fork this repository
-2. Connect to Vercel
-3. Deploy automatically
-4. Access via `irm https://your-domain.vercel.app/install | iex`
-
-## Safety Notes
-
 - Always test on a virtual machine first
 - Keep your original ISO as backup
 - Some tweaks (CPU mitigations) trade security for performance

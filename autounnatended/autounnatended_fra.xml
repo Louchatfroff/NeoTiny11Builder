@@ -1108,6 +1108,12 @@ $scripts = @(
 		  reg.exe add "HKLM\Software\Policies\Microsoft\Windows NT\Reliability" /v "ShutdownReasonOn" /t REG_DWORD /d 0 /f;
 		  reg.exe add "HKLM\Software\Policies\Microsoft\Windows NT\Reliability" /v "ShutdownReasonUI" /t REG_DWORD /d 0 /f;
 		  reg.exe add "HKLM\Software\Microsoft\Windows\CurrentVersion\Reliability" /v "ShutdownReasonUI" /t REG_DWORD /d 0 /f;
+		  # Delete DirtyShutdown keys to prevent "Why did my PC restart" message
+		  reg.exe delete "HKLM\Software\Microsoft\Windows\CurrentVersion\Reliability" /v "DirtyShutdown" /f 2>$null;
+		  reg.exe delete "HKLM\Software\Microsoft\Windows\CurrentVersion\Reliability" /v "DirtyShutdownTime" /f 2>$null;
+		  # CRITICAL: Disable OOBE forced updates (fixes "Why did my PC restart" in Windows 11 24H2)
+		  reg.exe add "HKLM\Software\Policies\Microsoft\Windows\CloudContent" /v "DisableCloudOptimizedContent" /t REG_DWORD /d 1 /f;
+		  reg.exe add "HKLM\Software\Policies\Microsoft\Windows\CloudContent" /v "DisableWindowsConsumerFeatures" /t REG_DWORD /d 1 /f;
 		  # Disable Windows Update completely
 		  reg.exe add "HKLM\Software\Policies\Microsoft\Windows\WindowsUpdate" /v "DisableWindowsUpdateAccess" /t REG_DWORD /d 1 /f;
 		  reg.exe add "HKLM\Software\Policies\Microsoft\Windows\WindowsUpdate\AU" /v "NoAutoUpdate" /t REG_DWORD /d 1 /f;
@@ -1116,6 +1122,11 @@ $scripts = @(
 		  reg.exe add "HKLM\Software\Policies\Microsoft\Windows\WindowsUpdate" /v "SetAutoRestartNotificationDisable" /t REG_DWORD /d 1 /f;
 		  # Disable automatic maintenance
 		  reg.exe add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Schedule\Maintenance" /v "MaintenanceDisabled" /t REG_DWORD /d 1 /f;
+		  # Skip OOBE machine and user setup (deprecated but still works)
+		  reg.exe add "HKLM\Software\Microsoft\Windows\CurrentVersion\Setup\OOBE" /v "SkipMachineOOBE" /t REG_DWORD /d 1 /f;
+		  reg.exe add "HKLM\Software\Microsoft\Windows\CurrentVersion\Setup\OOBE" /v "SkipUserOOBE" /t REG_DWORD /d 1 /f;
+		  # Disable OOBE network requirement
+		  reg.exe add "HKLM\Software\Microsoft\Windows\CurrentVersion\OOBE" /v "BypassNRO" /t REG_DWORD /d 1 /f;
 	};
 	{
 		&amp; 'C:\Windows\Setup\Scripts\Wdac.ps1';
